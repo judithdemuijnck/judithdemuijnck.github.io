@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Judith de Muijnck | Home</title>
+    </head>
+    
+    <body>
+        <!--Header with Photo-->
+        <h1>JUDITH DE MUIJNCK</h1>
+        <h3>pop culture analysis, lifestyle &amp; feminism</h3>
+        <!-- Should I put header in a box??-->
+        <!-- Should I add a subtitle h2??-->
+        <a href="index.html"><img src="DSCN1556.jpeg" alt="a placeholder photo of Lake Tekapo, NZ" height="30%" width="30%"></a>
+        
+        <hr>
+        <!--Navigation bar with links to pages-->
+        <table
+               border="0"
+               cellpadding="10"
+               cellspacing="10">
+            <tr>
+                <td><a href="index.html">Home</a></td>
+                <td><a href="pop_culture.html">Pop Culture</a></td>
+                <td><a href="lifestyle.html">Lifestyle</a></td>
+                <td><a href="feminism.html">Feminism</a></td>
+                <td><a href="built_website.html">How I Built This Website</a></td>
+                <td><a href="contact.html">Contact</a></td>
+        </tr>
+        </table>
+        <hr>
+        
+        <!--Content-->
+       <h2>Navigation</h2>
+        <h4><a href="pop_culture.html">Pop Culture</a></h4>
+            <ul>
+                <a href="pop_culture_matters.html"><li>Why Pop Culture Matters</li></a>
+                <a href="complex_consent.html"><li>Outside: One Day at a Time and the Complexity of Consent</li></a>
+                <a href="erotic_stories_punjabi_widows.html"><li>Book Review: Erotic Stories for Punjabi Widows</li></a>
+            </ul>
+        
+       <h4><a href="lifestyle.html">Lifestyle</a></h4>
+        <ul>
+            <a href="how_to_skincare.html"><li>How to Build a Skincare Routine</li></a>
+            </ul>
+        
+        <h4><a href="feminism.html">Feminism</a></h4>
+        <ul>
+            <a href="complex_consent.html"><li>Outside: One Day at a Time and the Complexity of Consent</li></a>
+        </ul>
+            
+        <h4><a href="built_website.html">How I Built This Website</a></h4> 
+            <ul>
+                <li>Blogpost 1</li>
+                <li>Blogpost 2</li>
+            </ul>
+            
+        <h4><a href="contact.html">Contact</a></h4>
+    
+    </body>
+
+</html>
