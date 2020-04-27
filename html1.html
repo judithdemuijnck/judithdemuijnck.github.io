@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Judith de Muijnck | HTML I</title>
+    </head>
+    
+    <body>
+        <!--Header with photo-->
+        <h1>JUDITH DE MUIJNCK</h1>
+        <h3>pop culture analysis, lifestyle &amp; feminism</h3>
+        <a href="index.html"><img src="DSCN1556.jpeg" alt="a placeholder photo of Lake Tekapo, NZ" height="30%" width="30%"></a>
+        
+        <hr>
+        <!--Navigation abr with links to pages-->
+        <table
+            border="0"
+            cellpadding="10"
+            cellspacing="10">
+            
+            <tr>
+            <td><a href="index.html">Home</a></td>
+            <td><a href="pop_culture.html">Pop Culture</a></td>
+            <td><a href="lifestyle.html">Lifestyle</a></td>
+            <td><a href="feminism.html">Feminism</a></td>
+            <td><a href="built_website.html">How I Built This Website</a></td>
+            <td><a href="contact.html">Contact</a></td>
+            </tr>
+        </table>
+        <hr>
+        
+        <!--Content-->
+        <h1>How I Built This Website</h1>
+        <h2>Part 1: HTML</h2>
+        
+        <p>I am currently taking a beginner’s class on full-stack web development over on Udemy. I have always been interested in how website’s work, and now that I have started my own blog, I feel like it is the perfect timing to finally learn this myself. My end goal is to fully build and host this website on my own, and I am especially interested in automation. At this moment, design-wise I am orienting myself on my “backup-blog” hosted on <a href="https://horizonssingblog.wordpress.com">Wordpress</a>, and I am mixing what I am learning in my class with my own research on the internet. I am a long way off from a fully-functioning and aesthetically pleasing website, but here you will get step by step descriptions of how I am building my first website, starting with the skeleton: HTML.</p>
+        
+        <h3>Getting Started</h3>
+        <p>I am currently working with the <a href="http://brackets.io/">Brackets</a> desktop application but will eventually move the website over to <a href="https://github.com/">github</a>.
+        <br>As with every HTML file, the document needs to be declared as such to inform the browser what to expect. In HTML5, you declare the document by using the <button>&lt;!DOCTYPE html&gt;</button> tag. 
+        <br>All html elements also need to be contained in the <button>&lt;html&gt;</button> tag. Do not forget to close this at the end of your document.</p>
+        
+        <h3>Head</h3>
+        <p>I am following with the <button>&lt;head&gt;</button>. As far as I understand it, the head is used to load CSS and style elements into your document. For now, however, I will only use the <button>&lt;title&gt;</button> tag to give my website a title in the browser toolbar and for search-engines.</p>
+        
+        <img src="head%20code%20example.png" alt="code example of this head">
+        
+        <h3>Body</h3>
+        <p>The body includes everything that will be visible on your website. It needs to be contained in the <button>&lt;body&gt;</button> tag. Don’t forget to close this tag at the end of the document.</p>
+        
+        <p>I am starting with a headline <button>&lt;h1&gt;</button>. For now, this headline will be my name. I am still unsure whether I want to keep this or change it to a cleverer title, but as a work-in-progress I will use my name as the website title. I also added a subtitle in <button>&lt;h3&gt;</button>: “pop culture analysis, lifestyle &amp; feminism.” Again, this subtitle might eventually change, but for now I will keep it this way.</p>
+        
+        <p>There are two things I needed to research while adding the subtitle.</p>
+        
+        <ol>
+            <li>I noticed that the <button>&amp;</button> immediately turned red. It did print on the actual website, but it made me aware that the <button>&amp;</button> seems to have a different function in HTML. I did some research and found out that I need to use the <em>HTML entity</em> <button>&amp;amp;</button> as an escape code. The <button>&amp;</button> is usually the start of an HTML entity.</li>
+            <li>I wondered how to add comments in HTML and found out I need to use the <button>&lt;!-- TEXT --&gt;</button> tag. This will not be printed and can be used as a comment, description or reminder to update later.</li>
+        </ol>
+        
+        <h4>Images</h4>
+        <p>Having overcome the hurdle of the Ampersand and the subtitle, I want to add a photo to my website. I chose a photograph from my trip to New Zealand in 2018 as I want to talk about traveling on my blog at some point. Until now, I only knew how to add photos from the internet, but after a bit of research, I found out that I could simply move the desired image into the same folder as <button>index.html</button>, and could then load the photo into the document by referencing its file name as the <button>src</button> source. 
+        <br><button>&lt;img src="photo.jpeg"&gt;</button></p>
+        
+        <p><button>alt</button> should give a description of the image that can be loaded as an alternative if the image cannot be found or the internet connection is too slow. The size of the image can be altered by using <button>height</button> and <button>width</button>. In my case, my photograph was way too big (thanks high-res camera) so I needed to scale it down. This can be either done by defining <button>height</button> and <button>width</button> through <button>%</button> or <button>px</button>(pixel). My eyes are not particularly great when it comes to design and pixels, so scaled the picture down to 30% of its original size.</p>
+        
+        <img src="img%20code%20example.png" alt="code example of the image">
+        <p>There is still a lot to be done to make the image look aesthetically more pleasing, but I think this is about everything I can do with basic HTML.</p>
+        
+        <h4>Navigation Bar</h4>
+        <p>Underneath the header, I want a navigation bar that links to the different pages/categories of my blog. I could have used an unordered list (<button>&lt;ul&gt;</button>, bullet points) or ordered list (<button>&lt;ol&gt;</button>, numbered). In this case, each point would have to be contained in the <button>&lt;li&gt;</button> list item tag.</p>
+        
+        <img src="list%20code%20example.png" alt="code example of an unordered list">
+        
+        <p>However, in my Udemy class I was taught a trick that can make this look closer to an actual navigation bar rather than a navigation list: tables.</p>
+        
+        <p>First of all, I am separating the head with an horizontal line using the <button>&lt;hr&gt;</button> tag. I then create a table using the <button>&lt;table&gt;</button> tag. This table will have only one <button>&lt;tr&gt;</button> table row with each page having its own column. Each page/column is contained in the <button>&lt;td&gt;</button> table data tag. The table will also have no border. With a bit of CSS I can set the border to 0 and play around with cellpadding and cellspacing until it almost looks like a proper navigation bar.</p>
+        
+        <img src="navigation%20bar%20code%20example.png" alt="code example of the navigation bar using tables">
+        
+        <hr>
+        <p>This is what the website currently looks like:</p>
+        <img src=website%20skeleton%201.png alt="an image of the website's skeleton">
+        
+        <p>Once I have added the links using the <button>&lt;a href="SOURCE"&gt;DESCRIPTION&lt;/a&gt;</button> tag, I want this part of the website to be stable and to only add new content underneath. Currently, I do not know how to keep the top fixed, but I assume this is something I will learn later in the course using a different language.</p>
+        
+        <h4>Home</h4>
+        <p>For now, I will turn the Home page into a navigation page. Ultimately, I want my new posts to automatically appear on Home, but until I know how to do this, I will simply link to my blogposts on Home. At the moment, I do not have any pages to link to, so I create a <button>&lt;ul&gt;</button>  list with the names of my blogposts to which I will link later. While creating the navigation page, I realize that the <button>&lt;p&gt;</button> tag only contains text and cannot contain headings or lists.</p>
+        
+        <h4>Pages</h4>
+        <p>Now that Home or <button>index.html</button> is essentially done, I have to create new pages. I could simply use copy & paste to get the exact same look on every single page, but as I am trying to properly learn HTML, I decided to write every single page by hand to get used to this new language. I immediately realized how important spelling is: for ages I was wondering why the navigation bar looked different on two of the pages until I noticed that I had misspelled “cellpadding” with just one “d” so that one of the tables did not have the same <button>cellpadding</button> as the other.</p>
+        
+        <h4>Contact Form</h4>
+        <p>For the contact page, I am building a form that creates input-fields and a submit button. At this point, I do not know where the submitted input would actually go. Other websites also suggest creating forms using labels, which I will research further. For now, however, this is the contact form which can be updated later:</p>
+        
+        <img src="form%20code%20example.png" alt="a code example of an input form">
+        
+        <h4>Blogposts</h4>
+        <p>My next step is to move a few blogposts onto the website. As I am currently still writing each page individually and have to update any change to all pages, I will only post a couple of blogposts as a test. If you are interested in my non-technical writing, you can check out the rest of my blogposts on my <a href="https://horizonssingblog.wordpress.com">Wordpress</a>.</p>
+        
+        <p>While I am moving the blogposts onto the website, I wonder if I can centre the text. I assume this is something I will learn through CSS, but I will still do some research on this later. I also realize that there is a certain order within HTML. For example, if I want to add links to a table, the link is contained within the <button>&lt;td&gt;</button> tag, but if I want to add a link to a <button>&lt;ul&gt;</button> then the link contains the <button>&lt;li&gt;</button>.</p>
+        
+        <p>Once I have moved a sample of blogposts onto the website, I only need to add links to the different pages and posts, and then I am done and ready to move everything to github where it can go live.</p>
+        
+        <h3>Github</h3>
+        <p>I was initially quite worried about moving everything to github. I knew how to create the <button>index.html</button> site but believed it would be quite difficult to link to other pages and I had no idea how to add images either. Once I had opened my github repository, though, it turned out everything was incredibly easy. Within the code section of the project’s repository, I could create new files/sites and link to them by simply referring to their complete name. I could also simply upload my .html files as a whole to the repository, and images can be uploaded the same way. Within just a few minutes I had moved all the sites I had created in Brackets to github, and then the website was live!  </p>
+        
+        <h3>What Now</h3>
+        <p>While writing about the experience of creating my first website, I quickly noticed something else: just like I need to replace <button>&amp;</button> with <button>&amp;amp;</button> in order to print the ampersand, I also needed to replace <button>&lt;</button> and <button>&gt;</button> with <button>&amp;lt;</button> and <button>&amp;gt;</button>.</p>
+        
+        <p>I have also come up with a few questions that I want to research:</p>
+        <ul>
+            <li>Can I centre text in HTML, or is this only possible with CSS?</li>
+            <li>Can I use automations in HTML?</li>
+            <li>Where does the input go when you click "submit"?</li>
+        </ul>
+        
+        <p>In connection to the last point, I want to mess with the contact form. Add labels (also: learn about labels), add another text-input. I also want to play around with videos and video-settings, as this has not come up yet. Furthermore, I should have a look at other HTML tags and see if any of them can be helpful to make this website look a bit more presentable.</p>
+        
+        <p>My next blogpost will either be about learning more HTML and answering these questions, or I will start the next lesson on CSS.</p>
+        
+        <p>Until then, stay curious and thank you for reading.</p>
+        
+    </body>
+    
+</html>
+    
+
+        
+
+        
+        
+        
+       
