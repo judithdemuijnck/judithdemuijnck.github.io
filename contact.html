@@ -1,46 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <title>Judith de Muijnck | Contact</title>
+        
         <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300&family=Raleway:wght@300&display=swap">
+        
+        <meta charset="UTF-8">
+        <meta name="description" content="Blog">
+        <meta name="author" content="Judith de Muijnck">
+        <meta name="keywords" content="contact">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
     </head>
     
     <body>
-        <h1>JUDITH DE MUIJNCK</h1>
-        <h3>pop culture analysis, lifestyle &amp; feminism</h3>
-        <a href="index.html"><img src="DSCN1556.jpeg" alt="a placeholder photo of Lake Tekapo, NZ" height="30%" width="30%"></a>
+        <header>
+            <a>
+                <div class="text-block">
+                    <h1>JUDITH DE MUIJNCK</h1>
+                    <h3>pop culture analysis, lifestyle &amp; feminism</h3>
+                </div>
+            </a>
+            <img src="DSCN1556.jpeg" alt="a placeholder photo of Lake Tekapo, NZ" height="auto" width="100%">
+        </header>
         
-        <hr>
-        <table
-               border="0"
-               cellpadding="10"
-               cellspacing="10">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="pop_culture.html">Pop Culture</a>
+            <a href="lifestyle.html">Lifestyle</a>
+            <a href="feminism.html">Feminism</a>
+            <a href="built_website.html">How I Built This Website</a>
+            <a class="active" href="contact.html">Contact</a>
+        </nav>
         
-        <tr>
-            <td><a href="index.html">Home</a></td>
-                <td><a href="pop_culture.html">Pop Culture</a></td>
-                <td><a href="lifestyle.html">Lifestyle</a></td>
-                <td><a href="feminism.html">Feminism</a></td>
-                <td><a href="built_website.html">How I Built This Website</a></td>
-                <td><a href="contact.html"><strong>Contact</strong></a></td>
-            </tr>
-        </table>
-        <hr>
-        
+        <main>
         <!--Content-->
-        <h2>Contact Form</h2>
+        <section>
+            <h2>Contact Form</h2>
         
-        <form action="https://formspree.io/mjvabpwv" method="POST" target="_blank">
-            <fieldset>
-                <legend>Please fill out:</legend>
-                <label for="fname">First Name: <input type="text" id="fname" name="fname" required></label><br>
-                <label for="lname">Last Name: <input type="text" id="lname" name="lname"></label><br>
-                <label for="email">E-Mail: <input type="email" id="email" name="email" required></label><br>
-                <label for="message">Message:<br> <textarea id="message" name="message" rows="10" cols="50" required></textarea></label><br>
-                <input type="submit" value="Send">
-            </fieldset>
-        </form>
         
+            <form action="https://formspree.io/mjvabpwv" target="_blank" method="POST">
+                <fieldset>
+                    <legend>Please fill out:</legend>
+                    <label for="fname">First Name: <input type="text" id="fname" name="fname" required></label><br>
+                    <label for="lname">Last Name: <input type="text" id="lname" name="lname"></label><br>
+                    <label for="email">E-Mail: <input type="email" id="email" name="email" required></label><br>
+                    <label for="message">Message:<br> <textarea id="message" name="message" rows="10" cols="50" required></textarea></label><br>
+                    <input type="submit" value="Send">
+                </fieldset>
+            </form>
+        </section>
+            
+        </main>
+        
+        <footer>
+            <hr>
+            <p>&copy; Judith de Muijnck 2020</p>
+        </footer>
         
     </body>
 </html>
