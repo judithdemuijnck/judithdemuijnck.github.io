@@ -67,7 +67,7 @@ article {
     padding: 20px;
     width: 65%;
     text-align: center;
-    font-weight:300;
+    font-weight:300 !important;
 }
 
 article ul {
