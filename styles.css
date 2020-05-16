@@ -74,6 +74,14 @@ article ul {
     text-align:left;
 }
 
+article h2 {
+    font-weight:300;
+}
+
+article h3 {
+    font-weight:300 !important;
+}
+
 .sources {
     text-align:left;
 }
