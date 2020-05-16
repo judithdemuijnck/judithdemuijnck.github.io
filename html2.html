@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Judith de Muijnck | HTML II</title>
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300&family=Raleway:wght@300&display=swap">
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, intial-scale=1.0">
+        <meta name="description" content="Blog">
+        <meta name="author" content="Judith de Muijnck">
+        <meta name="keywords" content="Blog, HTML, CSS, web development">
+        
+        <style>
+            body {
+                font-family:Lato, sans-serif;
+                background-color:rgb(255, 255, 230);
+            }
+            
+            * {
+                box-sizing:border-box;
+            }
+            
+            header {
+                position: relative;
+                text-align: center;
+                display:block;
+                margin-left: auto;
+                margin-right:auto;
+            }
+            
+            header .text-block {
+                font-family:Raleway, sans-serif;
+                background-color: rgba(0,0,0,.8);
+                color: white;
+                text-decoration: none;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                padding-left: 20px;
+                padding-right:20px;   
+            }
+            
+            nav {
+                background-color: black;
+                overflow:hidden;
+                font-family:Raleway,sans-serif;    
+            }
+            
+            nav a {
+                color:darkgrey;
+                text-decoration:none;
+                text-align:center;
+                float: left;
+                font-size:17px;
+                padding:14px 16px;
+            }
+            
+            nav a:hover {
+                color:white;
+            }
+            
+            nav a.active {
+                color:white;
+            }
+            
+            article {
+                text-align: center;
+                float:left;
+                width: 65%;
+                padding: 20px;
+            }
+            
+            article ul {
+                text-align: left;
+            }
+            
+            .codesample {
+                background-color:#EEEEEE;
+                font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace;
+                font-size:10px;
+            }
+            
+            aside {
+                float:left;
+                width:35%;
+                text-align: center;
+                padding: 30px;
+                font-family:Raleway,sans-serif;
+            }
+            
+            aside ul{
+                text-align:left;
+            }
+            
+            main:after {
+                display:block;
+                clear:both;
+                content: "";
+            }
+            
+            footer {
+                padding: 10px;
+                text-align:center;
+            }
+            
+            @media screen and (max-width: 800px) {
+                header, nav, article, aside {
+                    width: 100%;
+                    height: auto;
+                }
+                header h1 {
+                    font-size 20px;
+                }
+                header h3 {
+                    font-size:15px
+                }
+            } 
+            
+            @media screen and (min-width: 801px) {
+                header h1 {
+                    font-size:3vw;
+                }
+                header h3 {
+                    font-size:2vw;
+                }
+            }
+        </style>
+    
+    </head>
+    
+    <body>
+        <header>
+            <a href="index.html">
+                <div class="text-block">
+                    <h1>JUDITH DE MUIJNCK</h1>
+                    <h3>pop culture analysis, lifestyle &amp; feminism</h3>
+                </div>
+            </a>
+            <img src="DSCN1556.jpeg" alt="a placeholder photo of Lake Tekapo, NZ" width="100%" height="auto">
+        </header>
+        
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="pop_culture.html">Pop Culture</a>
+            <a href="lifestyle.html">Lifestyle</a>
+            <a href="feminism.html">Feminism</a>
+            <a class="active" href="built_website.html">How I Built This Website</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </body>
+    
+    <!--Content-->
+    <main>
+        <section>
+            <!--Blogpost-->
+            <article>
+                <h1 style="font-size:24px;">How I Built This Website</h1>
+                <h2>Part 2: HTML II</h2>
+                <h3>Contact Forms</h3>
+                <p>In my last post, I wondered about contact forms, especially about how and where the submitted input is processed. After research, I found out that I have to specify the action attribute within the <code class="codesample">&lt;form&gt;</code> element.</p>
+                
+                <code class="codesample">&lt;form action="/action.page.php" method="POST" target="_blank"&gt; </code>
+                
+                <p>In the example above, the input is submitted to a .php page. Eventually, I want to learn PHP as well, however it is only recommended if you already have basic knowledge of HTML, CSS and Javascript. For now my <code class="codesample">action</code> attribute will be linking to an external form-handler (<a href="https://formspree.io">formspree.io</a>). The <code class="codesample">method</code> attribute defines how data is submitted. The default <code class="codesample">method</code> is GET, which allows to bookmark results as the submitted input is shown in the URL. For sensitive data, POST should be used. The example also shows the <code class="codesample">target</code> attribute which defines how the results will be opened. The default is <code class="codesample">_self</code>, meaning it will open on the same page. With <code class="codesample">_blank</code> results will open in a new window or tab. The <code class="codesample">target</code> attribute works for other links as well.</p> 
+                
+                <p>I have also learned how to create a proper submit button. Rather than simply creating a button using the <code class="codesample">&lt;button&gt;</code> element, I am now creating an input element:  <code class="codesample">&lt;input type="submit"&gt;</code>. Furthermore, I realized each text input needs a <code class="codesample">name</code> attribute, otherwise the data cannot be submitted.</p>
+                
+                <img src="contact%20form%20with%20action%20page.png" alt="code example of contact form with action page" width="auto" height="auto">
+                
+                <p>W3schools is also using <code class="codesample">id</code>, <code class="codesample">label</code> and <code class="codesample">value</code> attributes. To be honest, I haven’t quite figured out what these are for, but will include them in my final form just to be save.</p>
+                
+                <p>For the message field, I am changing from <code class="codesample">&lt;input type="text"&gt;</code>, which would allow for only very little input, to <code class="codesample">&lt;textarea&gt;</code>, which allows for multi-line input. I am also adding the <code class="codesample">required</code> attribute to some elements. Furthermore, I found out about the <code class="codesample">&lt;fieldset&gt;</code> element, which groups input together and creates a box around it, and the <code class="codesample">&lt;legend&gt;</code> element, which is contained within the <code class="codesample">&lt;fieldset&gt;</code> element and gives it a title. Having made all these changes, my final contact form looks like this:</p>
+                
+                <figure>
+                    <img src="contact%20form%20final.png">
+                    <figcaption style="font-family:Raleway,sans-serif;font-size:13px">Notice the typo "methode" for the <code class="codesample">method</code> attribute which almost caused me a mental breakdown as I simply couldn't figure out why the form-handler wasn't working for a good 10 minutes.
+                    </figcaption>
+                </figure>
+                
+                <p>When it comes to forms, I learned that there are many types. Here is a example of a <code class="codesample">&lt;select&gt;</code> drop-down list:</p>
+                
+                <form>
+                    <fieldset>
+                        <legend>Select</legend>
+                        <label for="gender">Choose your gender:</label><br>
+                        <select id="gender" name="gender">
+                            <option value="choose" selected>Choose</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select><br>
+                        <input type="submit" value="Send">
+                    </fieldset>
+                </form>
+                
+                <p>Here is an example for radio buttons:</p>
+                
+                <form>
+                    <fieldset>
+                        <legend>Radio Buttons</legend>
+                        <label for="gender">Choose your gender:</label><br>
+                        <input type="radio" id="male" name="gender" value="male">
+                        <label for="male">Male</label><br>
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">Female</label><br>
+                        <label for="other"><input type="radio" id="other" name="gender" value="other">Other - please specify:</label>
+                        <label for="other"><input type="text" id="other" name="gender"> </label><br>
+                        <input type="submit" value="Send">
+                    </fieldset></form>
+                
+                <p>And here is an example of a datalist:</p>
+                
+                <form>
+                    <fieldset>
+                        <legend>Datalist</legend>
+                        <label for="gender">Enter your gender:</label><br>
+                        <input list="choose_gender" name="gender">
+                        <datalist id="choose_gender">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </datalist><br>
+                        <input type="submit" value="Send">
+                    </fieldset>
+                </form>
+                
+                <h3>Meta Data</h3>
+                <p>Once I finished my contact form, I moved on to adding meta data contained in the <code class="codesample">&lt;head&gt;</code> element. I first declared the language of the website’s text using <code class="codesample">&lt;html lang="en"&gt;</code>. This is important so that screen readers can properly process the given information.</p>
+                
+                <p>The <code class="codesample">&lt;meta&gt;</code> element contains information for search engines, such as author information, descriptions and keywords: <code class="codesample">&lt;meta name="author" content="Judith de Muijnck"&gt;</code>. The <code class="codesample">charset</code> attribute within the <code class="codesample">&lt;meta&gt;</code> element defines the character encoding of the document. The most common value is UTF-8. Within the <code class="codesample">&lt;meta&gt;</code> element you can also create a responsive website by controlling the viewport. Viewport is the visible area of a website, responsive means that the content will adapt to the screen size of the device used. So when on mobile phones, the viewport is much smaller, and the content needs to adapt to it.</p>
+                
+                <code class="codesample">&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</code> 
+                
+                <p>Unfortunately this does not seem to work on tables, so my navigation bar is currently cropped on mobile. This is a problem I need to fix in the future.</p>
+                
+                <img src="mobile_IMG_5093.png" alt="phone screencap showing a cropped navigation bar" width="auto" height="auto">
+                
+                <h3>Other HTML Tweaks</h3>
+                <p>There are two more elements I learned about. The first is the <code class="codesample">&lt;figure&gt;</code> element which can contain images and other figures. More importantly, it groups figures and text together. Use the <code class="codesample">&lt;figcaption&gt;</code> element within <code class="codesample">&lt;figure&gt;</code> to caption a figure.</p>
+                
+                <p>The second is the <code class="codesample">&lt;details&gt;</code> element which hides content. Use the <code class="codesample">&lt;summary&gt;</code> element within <code class="codesample">&lt;details&gt;</code> to give it a visible title:</p>
+                
+                <details>
+                    <summary>Hidden</summary>
+                    <p>This content is hidden.</p>
+                </details>
+                
+                <h3>Styling with CSS</h3>
+                <p>Last time, I wondered how I could center text, and whether I needed CSS for this. While properly styling the website is only possible with CSS, it still seemed easy enough, so I eventually decided to add some styling already.</p>
+                
+                <p>Using the <code class="codesample">&lt;style&gt;</code> element, I centered my text with <code class="codesample">text-align:center</code>. I also changed the <code class="codesample">background-color</code> to a warmer color. Furthermore, I created a class <code class="codesample">.codesample</code> that has a different <code class="codesample">background:color</code> and <code class="codesample">font-family</code> to highlight code in my posts. I then created a CSS stylesheet and loaded it into the HTML file. The great thing about stylesheets is that you can make changes to the styling and it automatically changes it on all the sites using the specific stylesheet.</p>
+                
+                <code class="codesample">&lt;link rel="stylesheet" href="styles.css"&gt;</code>
+                
+                <h3>Layout</h3>
+                <p>HTML allows you to structure your website using elements such as <code class="codesample">&lt;header&gt;</code>, <code class="codesample">&lt;nav&gt;</code>, <code class="codesample">&lt;main&gt;</code>, <code class="codesample">&lt;section&gt;</code>, <code class="codesample">&lt;article&gt;</code>, <code class="codesample">&lt;aside&gt;</code> or <code class="codesample">&lt;footer</code>. This makes it much easier to style certain sections. For example, I moved my blogposts into an <code class="codesample">&lt;article&gt;</code> and styled it using <code class="codesample">text-align:center;</code>, <code class="codesample">float:left;</code> and <code class="codesample">width:65%;</code>. I then created <code class="codesample">&lt;aside&gt;</code> as a sidebar and styled it with <code class="codesample">float:left;</code> and  <code class="codesample">width:35%;</code>.  The sidebar will contain links to similar blog posts and information about myself.</p>
+                
+                <h3>Header</h3>
+                <p>With my new (very basic) knowledge of CSS and some extra research, I updated my <code class="codesample">&lt;header&gt;</code>. First of all, I cropped the photo I’m using (I did not use HTML or CSS to do this – but maybe this is possible as well) and then changed <code class="codesample">height</code> to <code class="codesample">height:"auto";</code> and <code class="codesample">width</code> to <code class="codesample">width=”100%”;</code>. This made me realize that the percentage is referring to the amount of screen the image will take up, not actually the size of the photograph. I then moved my text on top of the picture by changing <code class="codesample">position</code> to <code class="codesample">position:absolute;</code> and rearranging the text <code class="codesample">top:50%;</code>, <code class="codesample">left:50%;</code> and <code class="codesample">transform:translate(-50%,-50%);</code> so that it is centered on top of the image. By turning the background to <code class="codesample">background-color:rgba(0,0,0,.8);</code> and updating the <code class="codesample">padding</code> the text is now in a black, slightly transparent box. I am very happy with my header for now but am still looking forward to learning more about CSS and how to update it even more.</p>
+                
+                <h3>Navigation Bar</h3>
+                <p>I also updated the navigation bar within the <code class="codesample">&lt;nav&gt;</code> element. Previously, I created a <code class="codesample">&lt;table&gt;</code> as my navigation bar as this automatically created some kind of padding between each cell. Now, however, I was able to delete <code class="codesample">&lt;table&gt;</code> and rather changed <code class="codesample">padding</code> to <code class="codesample">padding:16px;</code>.  I also changed the text to <code class="codesample">color:darkgrey;</code> and then created a class <code class="codesample">.active</code> to highlight active categories by changing to <code class="codesample">color:white;</code>. I also added the <code class="codesample">:hover</code> selector to style the text as <code class="codesample">color:white;</code> when the mouse hovers over it. Give it a try!</p>
+                
+                <h3>What's next?</h3>
+                <p>My next blog post should be more exclusively about CSS as I am starting my lecture on it. I’m looking forward to finding out how I can style the website even more!</p>
+                
+            
+            </article>
+            
+            <!--Sidebar-->
+            <aside>
+                <h2>Other blog posts that might interest you:</h2>
+                <ul>
+                    <a href="html1.html"><li>HTML I</li></a>
+                </ul>
+            </aside>
+        </section>
+    </main>
+    
+    <footer>
+        <hr>
+        <p>&copy; Judith de Muijnck 2020</p>
+    </footer>
+
+</html>
