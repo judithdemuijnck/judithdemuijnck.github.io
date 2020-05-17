@@ -60,6 +60,10 @@ main a:hover {
     color:black;
 }
 
+main {
+    font-weight:300;
+}
+
 article {
     float: left;
     padding: 20px;
