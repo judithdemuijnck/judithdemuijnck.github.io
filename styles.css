@@ -28,6 +28,7 @@ header .text-block {
     padding-left: 20px;
     padding-right:20px;
     font-family: Raleway, sans-serif;
+    text-decoration:none;
 }
 
 /*Navbar*/
@@ -48,43 +49,31 @@ nav a {
     text-decoration:none;
 }
 
-/*Styling links while mouse hovers*/
-nav a:hover {
-    background-color: black;
+/*Styling links while mouse hovers & active links in navbar*/
+nav  a.active, nav a:hover {
     color: white;
 }
 
-/*Styling active links in navbar*/
-nav a.active {
-    background-color: rgba(0,0,0,.8);
-    color:white;
-}
-
 /*Article / Blogposts / Main*/
+
+main a:hover {
+    color:black;
+}
 
 article {
     float: left;
     padding: 20px;
     width: 65%;
     text-align: center;
-    font-weight:300 !important;
 }
 
-article ul {
+article ul, .sources {
     text-align:left;
 }
 
-article h2 {
-    font-weight:300;
-}
-
-article h3 {
+article h1, h2, h3, h4 {
     font-weight:300 !important;
-}
-
-.sources {
-    text-align:left;
-}
+    }
 
 /* Class for code snippets*/
 .codesample {
@@ -102,8 +91,21 @@ aside {
     font-family:Raleway,sans-serif;
 }
 
+aside div {
+    border: 2px dotted darkgrey;
+    padding: 20px;
+}
+
 aside ul {
     text-align:left;
+}
+
+aside li {
+    padding:5px;
+}
+
+aside a:hover {
+    color:black;
 }
 
 /*Footer*/
@@ -125,10 +127,10 @@ footer {
         height: auto;
     }
     header h1 {
-        font-size: 20px;
+        font-size: 15px;
     }
     header h3 {
-        font-size: 15px;
+        font-size: 13px;
     }
 }
 
