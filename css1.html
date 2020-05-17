@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Judith de Muijnck | CSS I</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;700&family=Raleway:wght@300&display=swap">
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Blog">
+        <meta name="author" content="Judith de Muijnck">
+        <meta name="keywords" content="css, html, web development">
+        
+        <style>
+            body {
+                font-family:Lato, sans-serif;
+                background-color:rgb(255, 255, 230);
+            }
+            
+            * {
+                box-sizing:border-box;
+            }
+            
+            header {
+                position:relative;
+                display:block;
+                margin-left: auto;
+                margin-right:auto;
+                text-align:center;
+            }
+            
+            header .text-block {
+                position:absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color:rgba(0,0,0,.8);
+                padding-left: 20px;
+                padding-right: 20px;
+                font-family:Raleway,sans-serif;
+                color:white;
+                text-decoration: none;
+            }
+            
+            nav {
+                background-color:black;
+                overflow:hidden;
+                font-family:Raleway,sans-serif;
+                font-variant:small-caps;
+            }
+            
+            nav a {
+                padding: 14px 16px;
+                font-size: 17px;
+                float:left;
+                color: darkgrey;
+                text-decoration:none;
+            }
+            
+            nav a.active, nav a:hover {
+                color:white;
+            }
+            
+            article {
+                float:left;
+                width: 65%;
+                padding: 20px;
+                text-align:center;
+            }
+            
+            article h1 {
+                font-size:24px;
+            }
+            
+            article h1, h2, h3 {
+                font-weight:300 !important;
+            }
+            
+            article ul, .sources {
+                text-align:left;
+            }
+            
+            .codesample {
+                font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace;
+                font-size: 10px;
+                background-color:#EEEEEE;
+            }
+            
+            aside {
+                float:left;
+                width:35%;
+                padding:30px;
+                text-align:center;
+                font-family:Raleway, sans-serif;
+            }
+            
+            aside div {
+                border: 2px dotted darkgrey;
+                padding: 20px;
+            }
+            
+            aside ul {
+                text-align:left;
+            }
+            
+            aside a:hover {
+                color:black;
+            }
+            
+            main:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+            
+            footer {
+                padding: 10px;
+                text-align:center;
+            }
+            
+            @media screen and (max-width: 800px) {
+                header, article, nav, aside {
+                    width:100%;
+                    height:auto;
+                }
+                header h1 {
+                    font-size:15px;
+                }
+                header h3 {
+                    font-size:13px;
+                }
+            }
+            
+            @media screen and (min-width: 801px) {
+                header h1 {
+                    font-size:3vw;
+                }
+                header h3 {
+                    font-size:2vw;
+                }
+            }  
+            
+            .gradient-shadow {
+                background:linear-gradient(to bottom, #00ccff, #b3f0ff);
+                padding: 10px;
+                text-shadow: 2px 2px 5px black;
+                color:white;
+            }
+            
+            .border {
+                border:5px dotted red;
+                padding: 10px;
+            }
+            
+        </style>
+    </head>
+    
+    <body>
+        <header>
+            <div>
+                <a class="text-block" href="index.html">
+                    <h1>JUDITH DE MUIJNCK</h1>
+                    <h3>pop culture analysis, lifestyle &amp; feminism</h3>
+                </a>
+                <img src="DSCN1556.jpeg" alt="a placeholder photo of Lake Tekapo, NZ" width="100%" height="auto">
+            </div>
+        </header>
+        
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="pop_culture.html">Pop Culture</a>
+            <a href="lifestyle.html">Lifestyle</a>
+            <a href="feminism.html">Feminism</a>
+            <a class="active" href="built_website.html">How I Built This Website</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        
+        <main>
+            <section>
+                <article>
+                    <h1>How I Built This Website</h1>
+                    <h2>Part 3: CSS I</h2>
+                    
+                    <p>After already learning some CSS while tinkering with the styling of this website, I have now finally started my class on the topic. CSS stands for <b>C</b>ascading <b>S</b>tyle <b>S</b>heet and is used to control and style designs and layouts of a website. There are three different ways to use CSS:</p>
+                    
+                    <p>1. Inline<br>
+                        As the name suggests, CSS is added <em>in line</em>. Within the <code class="codesample">&lt;body&gt;</code> element, you can chose any element and style it directly like this:<br>
+                        <code class="codesample">&lt;h1 style="color:red;font-size:20px;"&gt;TEXT&lt;/h1&gt;</code>
+                    </p>
+                    
+                    <p>2. Internal<br>
+                        Styling is added to the <code class="codesample">&lt;head&gt;</code> element like this:
+                    </p>
+                    
+                    
+                        <img src="internal-unspecific.png" alt="code example for internal css" width="auto" height="auto">
+                        <p>In the example above, any <code class="codesample">&lt;h1&gt;</code> element will be styled accordingly. If you want to only change some elements, you need to be more specific:</p>
+
+                        <img src="internal%20specific.png" alt="code example for specific internal css" width="auto" height="auto">
+                        <p>In this example, only <code class="codesample">&lt;h1&gt;</code> elements that are contained within a <code class="codesample">&lt;header&gt;</code> element are styled.</p>
+                    
+                    <p>3. External<br>
+                        Most styling should be done through an external .css file. This avoids .html files to get too big and keeps everything more organized. External styling is very similar to internal styling:
+                    </p>
+                    
+                    <img src="external.png" alt="code example external css" width="auto" height="auto">
+                    
+                    <p>Only the <code class="codesample">&lt;style&gt;</code> element has to be dropped. As previously, in the example above, <em>any</em> <code class="codesample">&lt;h1&gt;</code> element will be styled accordingly and you need to be more specific if you want only certain elements to be styled. css.files need to be loaded into your .html file as such:<br>
+                    <code class="codesample">&lt;link rel=”stylesheet” href=”main.css”&gt;</code></p>
+                    
+                    <h3>Selectors</h3>
+                    <p>In the examples above, the elements have been directly targeted. It is also possible to create <code class="codesample">.classes</code> or <code class="codesample">#ids</code> to create stylings. <code class="codesample">.classes</code> should be used if multiple elements are styled with same <code class="codesample">property</code> and <code class="codesample">value</code>. For example, I have created the class <code class="codesample">.codesample</code> with the property <code class="codesample">background-color</code> set to the value <code class="codesample">#EEEEEE;</code>, the property <code class="codesample">font-family</code> set to the value <code class="codesample">monospace;</code> and the property <code class="codesample">fontz-size</code> set to the value <code class="codesample">10px;</code>. I can use this class to distinguish and highlight code from regular text. <code class="codesample">#ids</code>, on the other hand, should be used sparingly. They can have the same properties and values as <code class="codesample">.classes</code> but are mainly used to interact with javascript.</p>
+                    
+                    <h3>Colors</h3>
+                    <p>Color values can be declared in three different ways:</p>
+                    <ol style="text-align:left;">
+                        <li>By a common name, such as <code class="codesample">color:red;</code> or <code class="codesample">color:blue;</code></li> 
+                        <li> With a hex code such as <code class="codesample">color:#fff;</code> or <code class="codesample">color:#ffffff;</code> (6 characters is more specific)</li>
+                        <li>RGB color such as <code class="codesample">color:rgb(0,0,0);</code></li>
+                    </ol>
+                 
+                    <p>It is possible to include gradients and shadows as well.</p>
+                    
+                    <h1 class="gradient-shadow">Gradient Background with Shadows</h1>
+                    <img src="gradient-shadow.png" alt="example of gradients and shadows" width="65%" height="auto">
+                    
+                    <p>For gradients, you set the <code class="codesample">background</code> property to <code class="codesample">linear-gradient(direction, color1, color2);</code>. More than two colors can be used. Top <code class="codesample">to bottom</code> is the default setting but can be changed to any other direction. For shadows, you set the <code class="codesample">text-shadow</code> property to <code class="codesample">value 1(horizontal shadow) value 2 (vertical shadow) value 3 (blur radius) color;</code>. Blur radius and color are optional. All values can also be used for the <code class="codesample">box-shadow</code> property.</p>
+                    
+                    <h3>Background Images</h3>
+                    <p>It is possible to use an image as your background by simply assigning a value to <code class="codesample">background-image</code>. If the value (image) is too small, make sure to set <code class="codesample">background-repeat</code> to <code class="codesample">no-repeat;</code> to avoid a multiplied image. For an image to cover the entire viewport of the browser, use <code class="codesample">background-size:cover;</code>. <code class="codesample">background-size</code> is specific to the <code class="codesample">background-image</code> property.</p>
+                    
+                    <h3>Borders</h3>
+                    <p class="border">This text is surrounded by a dotted red border.</p>
+                    <img src="border.png" alt="code example of a border" width="auto" height="auto">
+                    
+                    <p>In this case, <code class="codesample">border</code> is a summary for <code class="codesample">border-left</code>, <code class="codesample">border-right</code>, <code class="codesample">border-top</code> and <code class="codesample">border-bottom</code>. Each of these properties can be individually styled. For my website, I initially tried to either change the <code class="codesample">border</code> property of <code class="codesample">&lt;aside&gt;</code> to <code class="codesample">border-left:2px dotted darkgrey;</code>  or of <code class="codesample">&lt;article&gt;</code> to <code class="codesample">border-right:2px dotted darkgrey;</code> in order to have a soft separation between <code class="codesample">&lt;article&gt;</code> and <code class="codesample">&lt;aside&gt;</code>. However, I did not enjoy the way this looked as the dotted border did not actually separate anything when in mobile/responsive mode. Instead, I created a <code class="codesample">&lt;div&gt;</code> within <code class="codesample">&lt;aside&gt;</code> and assigned <code class="codesample">border:2px dotted darkgrey;</code> to it. For now, I like the way this looks, especially in responsive mode.</p>
+                    
+                    <h3>Grouping</h3>
+                    <p>If multiple elements and/or <code class="codesample">.classes</code> have the same properties and values, they can simply be grouped together. Rather than declaring each element individually like this:</p>
+                    
+                    <img src="no-group.png" alt="code example not grouped" width="auto" height="auto">
+                    
+                    <p>You can simply group them together like this:</p>
+                    <img src="group.png" alt="code example grouped" width="auto" height="auto">
+                    
+                    <p>This allows for a lot less and much more organized code. I had already grouped together a couple of elements, but went back and made sure that none of my code was redundant. </p>
+                    
+                    <h3>Specificity</h3>
+                    <p>Each selector has a different weight value. So, when there are multiple declarations for the same element, there are certain rules as to which declaration is actually applied.</p>
+
+                    <ul>
+                        <li><code class="codesample">&lt;elements&gt;</code> have a value of 1</li>
+                        <li><code class="codesample">.classes</code> and <code class="codesample">[attributes]</code> have a value of 10</li>
+                        <li><code class="codesample">#ids</code> have a value of 100</li>
+                        <li>Inline styling has a value of 1000</li>
+                    </ul>
+
+                    <p>So, <code class="codesample">#ids</code> override <code class="codesample">.classes</code>, but inline styling (directly embedded in html) overrides all of the above. If there are multiple declarations and the weight value is the same (for example if there are two <code class="codesample">.classes</code> styling the same element) then whatever was declared last "wins". <code class="codesample">!important</code> overrides everything, no matter in what selector it is placed. It should be used very sparingly. 
+                    </p>
+                    
+                    <h3>What else?</h3>
+                    <p>This had nothing to do with this specific lesson on CSS, but I changed a <code class="codesample">@media</code> query so that the header looks better in responsive mode.</p>
+                    
+                    <img src="media.png" alt="code example of a media query" width="auto" height="auto">
+                    
+                    <h3>What's next?</h3>
+                    <p>The next lesson and blog post will be on intermediate CSS. Thanks for reading and see you next time! </p>
+                    
+                </article>
+                
+                <aside>
+                    <div>
+                        <h2>Other posts that might interest you:</h2>
+                        <ul>
+                            <li><a href="html1.html">Part 1: HTML I</a></li>
+                            <li><a href="html2.html">Part 2: HTML II</a></li>
+                        </ul>
+                    </div>
+                </aside>
+            
+            </section>
+        </main>
+        
+        <footer>
+            <hr>
+            <p>&copy; Judith de Muijnck 2020</p>
+        </footer>
+    
+    
+    </body>
+
+
+</html>
