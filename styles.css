@@ -1,4 +1,6 @@
 /*General*/
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;700&family=Raleway:wght@300&display=swap');
+
 body {
     background-color: rgb(255, 255, 230);
 }
@@ -79,6 +81,10 @@ article h1, h2, h3, h4 {
     font-weight:300 !important;
     }
 
+article h1 {
+    font-size:24px;
+}
+
 /* Class for code snippets*/
 .codesample {
     background-color:#EEEEEE;
@@ -97,7 +103,7 @@ aside {
 
 aside div {
     border: 2px dotted darkgrey;
-    padding: 20px;
+    padding:20px;
 }
 
 aside li {
@@ -106,6 +112,12 @@ aside li {
 
 aside a:hover {
     color:black;
+}
+
+aside img {
+    border-radius: 50%;
+    width: 60%;
+    height: auto;
 }
 
 /*Footer*/
