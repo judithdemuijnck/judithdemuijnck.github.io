@@ -60,7 +60,7 @@ main a:hover {
 }
 
 main {
-    font-weight:300 !important;
+    font-weight: 300 !important;
 }
 
 article {
@@ -68,10 +68,10 @@ article {
     padding: 20px;
     width: 65%;
     text-align: center;
-    font-family: Lato,sans-serif;
+    font-family:Lato,sans-serif;
 }
 
-article ul, .sources {
+article ul, aside ul, .sources, .left {
     text-align:left;
 }
 
@@ -100,10 +100,6 @@ aside div {
     padding: 20px;
 }
 
-aside ul {
-    text-align:left;
-}
-
 aside li {
     padding:5px;
 }
@@ -122,7 +118,7 @@ main:after {
 footer {
     padding: 10px;
     text-align: center;
-    font-family: Raleway, sans-serif;
+    font-family:Raleway,sans-serif;
 }
 
 /*Adapt to screen width*/
