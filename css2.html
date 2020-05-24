@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Judith de Muijnck | CSS II</title>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <meta name="author" content="Judith de Muijnck">
+        <meta name="description" content="Blog">
+        <meta name="keywords" content="web development, HTML, CSS">
+        
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;700&family=Raleway:wght@300&display=swap');
+            
+            body {
+                background-color: rgb(255,255,230)
+            }
+            
+            * {
+                box-sizing:border-box;
+            }
+            
+            header {
+                position:relative;
+                display:block;
+                margin-left:auto;
+                margin-right:auto;
+            }
+            
+            header .text-block {
+                text-align:center;
+                position:absolute;
+                background-color:black;
+                opacity: 0.8;
+                padding-left: 20px;
+                padding-right: 20px;
+                color:white;
+                top:50%;
+                left:50%;
+                transform:translate(-50%,-50%);
+                font-family:Raleway,sans-serif;
+                text-decoration:none;
+            }
+            
+            .responsiveimg {
+                max-width: 100%;
+                height: auto;
+            }
+            
+            nav {
+                background-color:black;
+                overflow:hidden;
+                font-family:Raleway,sans-serif;
+                font-variant:small-caps;
+            }
+            
+            nav a {
+                color:darkgrey;
+                float:left;
+                padding: 14px 16px;
+                text-align:center;
+                font-size:17px;
+                text-decoration: none;
+            }
+            
+            nav a.active, nav a:hover {
+                color:white;
+            }
+            
+            main a:hover {
+                color:black;
+            }
+            
+            main {
+                font-weight: 300 !important;
+            }
+            
+            article {
+                font-family:Lato;
+                float:left;
+                width:65%;
+                text-align: center;
+                padding:20px;
+            }
+            
+            article ul, aside ul, .sources, .left {
+                text-align:left;
+            }
+            
+            article h1 {
+                font-size:24px;
+            }
+            
+            article h1, h2, h3, h4 {
+                font-weight:300;
+            }
+            
+            article a:hover, aside a {
+                color:black;
+            }
+
+            article a, aside a:hover {
+                color:darkgrey;
+            }
+            
+            .codesample {
+                background-color:#EEEEEE;
+                font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace;
+                font-size:10px;
+            }
+            
+            aside {
+                float:left;
+                width:35%;
+                padding: 30px;
+                text-align: center;
+                font-family:Raleway,sans-serif;
+            }
+            
+            aside li {
+                padding:5px;
+            }
+            
+            aside div {
+                padding:20px;
+                border: 2px dotted darkgrey;
+                border-radius:5%
+            }
+            
+            section:after {
+                content:"";
+                display:table;
+                clear:both;
+            }
+            
+            main:after {
+                content:"";
+                display:table;
+                clear:both;
+            }
+            
+            footer {
+                padding:10px;
+                text-align:center;
+                font-family:Raleway,sans-serif;
+            }
+            
+            @media screen and (max-width:800px) {
+                header, nav, article, aside {
+                    width:100%;
+                    height:auto;
+                }
+                header h1 {
+                    font-size:15px;
+                }
+                header h3 {
+                    font-size:13px;
+                }
+            }
+            
+            @media screen and (min-width:801px) {
+                header h1 {
+                    font-size: 3vw;
+                }
+                header h3 {
+                    font-size:2vw;
+                }
+            }
+        
+        </style>
+    </head>
+    
+    <body>
+        <header>
+            <a href="index.html">
+                <div class="text-block">
+                    <h1>JUDITH DE MUIJNCK</h1>
+                    <h3>pop culture analysis, lifestyle &amp; feminism</h3>
+                </div>
+            </a>
+            <img src="DSCN1556.jpeg" alt="a placeholder photo of Lake Tekapo, NZ" class="responsiveimg">
+        </header>
+        
+        <nav>
+            <a href="index">Home</a>
+            <a href="pop_culture.html">Pop Culture</a>
+            <a href="lifestyle.html">Lifestyle</a>
+            <a href="feminism.html">Feminism</a>
+            <a class="active" href="built_website.html">How I Built This Website</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        
+        <main>
+            <section>
+                <article>
+                    <h1>How I Built This Website</h1>
+                    <h2>Part 4: CSS II</h2>
+                    <p>Today, I am continuing with my CSS class.</p>
+                    
+                    <h3>Fonts</h3>
+                    <p>In order to change the font of your text, you need to assign a <code class="codesample">font-family</code>. Font-families include <code class="codesample">serif</code>, <code class="codesample">sans-serif</code> and <code class="codesample">monospace</code>. You can also assign a specific font like this: <code class="codesample">font-family:Arial;</code>. A different <code class="codesample">font-family</code> should be assigned as a back-up; Not every browser will know each font so it needs something to fall on if it cannot load the original value: <code class="codesample">font-family:Arial,sans-serif;</code>. If your font name is more than one word, i.e. Times New Roman, you have to use quotation marks around it: <code class="codesample">font-family:"Times New Roman",serif;</code>.</p>
+                    
+                    <p>Most fonts won’t be known by your browser, so you have to download them into your file. The easiest way to do this is through <a href="https://fonts.google.com/">Google Fonts</a>, which offers a variety of fonts for free. It will also show you which <code class="codesample">font-family</code> to assign as a back-up font. Previously, I decided to use the fonts Lato and Raleway for my website and downloaded them for each individual site into the <code class="codesample">&lt;head&gt;</code> element like this:<br>
+                    <code class="codesample">&lt;link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300&amp;family=Raleway:wght@300&amp;display=swap"&gt;</code></p>
+                    
+                    <p>I now learned that you can simply use the <code class="codesample">@import</code> rule to load fonts into your CSS stylesheet, and then each site that is linked to said stylesheet can automatically use these fonts. I imported the fonts to my stylesheet like this:<br>
+                    <code class="codesample">@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;700&amp;family=Raleway:wght@300&amp;display=swap');</code><br>
+                    Google Fonts will automatically give you this code to embed into your file, all you need to do is simply copy and paste it into either your <code class="codesample">&lt;head&gt;</code> element or your stylesheet.</p>
+                    
+                    <p>You can change the size of your text by assigning a <code class="codesample">font-size</code>. Font-sizes can be assigned in <code class="codesample">px;</code>, which is a hard-set and doesn’t change even on responsive sites, or in <code class="codesample">rem;</code>/<code class="codesample">em;</code> which will be relative to the viewport and element sizes. You can also assign a <code class="codesample">font-style</code> like <code class="codesample">italic;</code> or <code class="codesample">normal;</code>.</p>
+                    
+                    <h3>Text-Formatting</h3>
+                    <p>I was not new to the <code class="codesample">text-align</code> property that I have used to <code class="codesample">center;</code> my text. I did however not know about the <code class="codesample">letter-spacing</code> property <span style="letter-spacing:3px;">which spreads out letters</span> and the <code class="codesample">word-spacing</code> property <span style="word-spacing:10px;">which spreads out words</span>. <code class="codesample">text-transform</code> will turn your text into i.e. all <code class="codesample">lowercase;</code> despite text syntax. So, for example <code class="codesample">&lt;p style="text-transform; lowercase;"&gt;THIS IS ALL CAPS&lt;/p&gt;</code> will still show up in all lower case. </p>
+                    
+                    <p><i>(While writing the previous paragraph, I learned about the <code class="codesample">&lt;span&gt;</code> element, which allows to inline-style a few lines/words rather than an entire section)</i></p>
+                    
+                    <p>You can also use inline formatting like <code class="codesample">&lt;b&gt;</code> <b>bold</b>, <code class="codesample">&lt;i&gt;</code> <i>italic</i>, <code class="codesample">&lt;em&gt;</code> <em>emphasized</em>, <code class="codesample">&lt;strong&gt;</code> <strong>strong</strong>, <code class="codesample">&lt;del&gt;</code> <del>delete</del> or <code class="codesample">&lt;mark&gt;</code> <mark>highlight</mark>.</p>
+                    
+                    <h3>Images</h3>
+                    <p>I was excited to learn more about images as I have been struggling with them a bit. I especially enjoyed learning how to create round corners and even turn the image in the ‘About Me’ section into a thumbnail-like circle by using the <code class="codesample">border-radius</code> property. By cropping my photograph into a square and adding <code class="codesample">border-radius:50%;</code>, my photo turned into a circle. I also added <code class="codesample">border:2px solid darkgrey;</code> and <code class="codesample">padding:2px;</code>. Check it out <a href="index.html#about_me">here.</a></p>
+                    
+                    <p><i>(While writing the previous paragraph, I learned how to create an anchor element that links to a specific part of a website, rather than just linking to the website itself. I wrapped the 'About Me' section in an anchor element, assigning an id to it: <code class="codesample">&lt;a id="about_me"&gt;SECTION&lt;a&gt;</code>. You can then link to it as such: <code class="codesample">&lt;a href="WEBPAGE#about_me&gt;</code>.)</i></p>
+                    
+                    <p>Furthermore, I learned about the <code class="codesample">opacity</code> property. It can have a value between <code class="codesample">0</code> and <code class="codesample">1</code>. <code class="codesample">0</code> means the element will be transparent, <code class="codesample">1</code> means it will be opaque. I already defined <code class="codesample">opacity</code> for <code class="codesample">.text-block</code> in my <code class="codesample">&lt;header&gt;</code>, but I used a different method. Rather than assigning the <code class="codesample">background-color</code> through a rgb-value <code class="codesample">rgb(0,0,0)</code>, I used the rgba-value <code class="codesample">rgba(0,0,0,.8)</code>. The <code class="codesample">a</code> defines the level of <code class="codesample">opacity</code>.</p>
+                    
+                    <p>To center an image, set the <code class="codesample">display</code> property to <code class="codesample">block;</code> and set a <code class="codesample">margin</code> of <code class="codesample">auto;</code>. If you want a responsive image, either the <code class="codesample">width</code> or, preferably, <code class="codesample">max-width</code> has to be set to <code class="codesample">100%;</code> with a <code class="codesample">height</code> of <code class="codesample">auto;</code>.</p>
+                    
+                    <h3>Padding &amp; Margin</h3>
+                    <p>I had already used <code class="codesample">padding</code> and <code class="codesample">margin</code>, but wasn’t quite sure of their difference. <code class="codesample">margin</code> creates space around/outside of the element, while <code class="codesample">padding</code> creates space <em>within</em> the element. For both <code class="codesample">margin</code> and <code class="codesample">padding</code>, you can either be specific and assign a value to <code class="codesample">margin-left</code> or <code class="codesample">padding-right</code>, or you simply assign a value to <code class="codesample">margin</code> or <code class="codesample">padding</code> which will give the same value to <code class="codesample">-left</code>, <code class="codesample">-right</code>, <code class="codesample">-top</code> and <code class="codesample">-bottom</code>. Another way of specifically assigning values to <code class="codesample">-left</code>, <code class="codesample">-right</code>, <code class="codesample">-top</code> and <code class="codesample">-bottom</code> is this: <code class="codesample">padding: 20px 10px;</code> In this scenario, <code class="codesample">20px</code> will be assigned to <code class="codesample">padding-top</code> and <code class="codesample">padding-bottom</code>, and <code class="codesample">10px</code> will be assigned to <code class="codesample">padding-left</code> and <code class="codesample">padding-right</code>. <code class="codesample">margin: 20px 10px 30px;</code> will assign <code class="codesample">20px</code> to <code class="codesample">margin-top</code>, <code class="codesample">10px</code> to <code class="codesample">margin-right</code> and <code class="codesample">margin-left</code> and <code class="codesample">30px</code> to <code class="codesample">margin-bottom</code>. <code class="codesample">padding: 20px 10px 30px 40px;</code> will assign <code class="codesample">20px</code> to <code class="codesample">padding-top</code>, <code class="codesample">10px</code> to <code class="codesample">padding-right</code>, <code class="codesample">30px</code> to <code class="codesample">padding-bottom</code> and <code class="codesample">40px</code> to <code class="codesample">padding-left</code>.</p>
+                    
+                    <h3>Grid System</h3>
+                    <p>I was not aware of this system. The idea is to create rows and columns that will allow you to easily position elements on the website. The grid system also works especially well for responsive websites as each column is given a certain percentage of the viewport and therefore easily shrinks and stretches out. Here is the example of the code that Udemy uses as their grid system:</p>
+                    
+                    <img src="grid-system.png" alt="code example of the grid system" class="responsive image">
+                    
+                    <p>All columns <code class="codesample">.col</code> need to add up to 12 in order to take up exactly 100% of the viewport. The <code class="codesample">box-sizing</code> property includes padding into the total width/height of the element. So, if it is set to <code class="codesample">border-box;</code> it stops elements from getting too big and leaving the viewport. The <code class="codesample">clear</code> property stops elements from floating after another element. Setting it to <code class="codesample">both;</code> stops elements from floating on both sides.</p>
+                    
+                    <p>At the moment, my system operates similarly. I have given <code class="codesample">&lt;article&gt;</code> the <code class="codesample">width</code> property of <code class="codesample">65%;</code> and <code class="codesample">&lt;aside&gt;</code> the <code class="codesample">width</code> property of <code class="codesample">35%;</code> so they are positioned next to each other and take up the entire viewport. I also placed both <code class="codesample">&lt;article&gt;</code> and <code class="codesample">&lt;aside&gt;</code> in a <code class="codesample">&lt;section&gt;</code> together. <code class="codesample">&lt;article&gt;</code> and <code class="codesample">&lt;aside&gt;</code> represent columns in this grid scenario, <code class="codesample">&lt;section&gt;</code> represents a row. After each <code class="codesample">&lt;section&gt;</code>, I also set <code class="codesample">clear</code> to <code class="codesample">both;</code> and my <code class="codesample">box-sizing</code> property is set to <code class="codesample">border-box;</code> for all elements, as well. </p>
+                    
+                    <h3>GitHub Desktop</h3>
+                    <p>Unrelated to the class I’m taking, I finally learned how to use GitHub Desktop. Previously, I was creating and editing files in Brackets, and then manually copied each individual file and pasted it into the remote version of my website on github. This was highly impractical as it took a lot of time to copy and paste different files, and whenever I made a change to any file I had to go back and manually fix it either on github or on the local version in Brackets. Now that I am using the desktop version, I still create and edit files in Brackets, but Github Desktop automatically notices any changes I make to the local website, highlights them for me so I can check them one more time, and I can easily commit the changes to my master branch – no copy or paste needed. It seems silly now that I thought making manual changes to each individual file on both Brackets and github was the easiest way to work on my website.</p>
+                    
+                    <h3>What else?</h3>
+                    <p>I’ve been playing around with the <code class="codesample">:hover</code> selector. At the moment, all links/anchor elements <code class="codesample">article a</code> will be styled <code class="codesample">color:darkgrey;</code> and <code class="codesample">article a:hover</code> will be styled <code class="codesample">color:black;</code>, whereas all links/anchor elements <code class="codesample">aside a</code> will be styled <code class="codesample">color:black;</code> and <code class="codesample">aside a:hover</code> will be styled <code class="codesample">color:darkgrey;</code>. This might change in the future, but it looks much better than the default setting. I also created a class <code class="codesample">.responsiveimg</code> with the properties: <code class="codesample">max-width:100%; height:auto;</code>. I now don’t have to set these properties individually each time I upload a new image.</p>
+                    
+                    <h3>What's next?</h3>
+                    <p>My CSS class is not done yet and I am sure there is much more to learn. I might also have my first look at JavaScript, depending how well my class is going. See you then!</p>
+                
+                </article>
+                
+                <aside>
+                    <div>
+                        <h2>Other posts that might interest you:</h2>
+                        <ul>
+                            <li><a href="html1.html">HTML I</a></li>
+                            <li><a href="html2.html">HTML II</a></li>
+                            <li><a href="css1.html">CSS I</a></li>
+                        </ul>
+                    </div>
+                </aside>
+            </section>
+        
+        </main>
+        
+        <footer>
+            <hr>
+            <p>&copy; Judith de Muijnck 2020</p>
+        </footer>
+        
+    
+    
+    </body>
+</html>
