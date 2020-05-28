@@ -4,8 +4,6 @@
     <title>Judith de Muijnck | Home</title>
     
     <link rel="stylesheet" href="styles.css">
-          
-
         
     <meta charset="UTF-8">
     <meta name="description" content="Blog">
@@ -19,6 +17,7 @@
     <body>
         <!--Header with Photo-->
         <header>
+            <div class="header">
                 <img src="DSCN1556.jpeg" alt="a placeholder photo of Lake Tekapo, NZ" class="responsiveimg">
                  <a href="index.html">        
                     <div class="text-block">
@@ -27,17 +26,21 @@
                         <h3>pop culture analysis, lifestyle &amp; feminism</h3>
                     </div>
                  </a>
+                </div>
         </header>
         
  
         
         <nav>
-            <a class="active" href="index.html">Home</a>
-            <a href="pop_culture.html">Pop Culture</a>
-            <a href="lifestyle.html">Lifestyle</a>
-            <a href="feminism.html">Feminism</a>
-            <a href="built_website.html">How I Built This Website</a>
-            <a href="contact.html">Contact</a>
+            <ul class="navbar" id="dropdownClick">
+                <li class="active"><a class="active" href="index.html">Home</a></li>
+                <li><a href="pop_culture.html">Pop Culture</a></li>
+                <li><a href="lifestyle.html">Lifestyle</a></li>
+                <li><a href="feminism.html">Feminism</a></li>
+                <li><a href="built_website.html">How I Built This Website</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="dropdownIcon active" onclick="dropdownMenu()"><a href="javascript:void(0);">&#9776;</a></li>
+            </ul>
         </nav>    
 
         
@@ -91,14 +94,22 @@
             
         </section>
         </main>
-
-
             
         <footer>
             <hr>
             <p>&copy; Judith de Muijnck 2020</p>
         </footer>
 
+        <script>
+            function dropdownMenu() {
+                var dropdownClick = document.getElementById("dropdownClick");
+                if (dropdownClick.className === "navbar") {
+                    dropdownClick.className += " responsive";
+                } else {
+                    dropdownClick.className = "navbar";
+                }
+            }
+        </script>
         
     </body>
 
