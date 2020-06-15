@@ -26,29 +26,51 @@
         </header>
         
         <nav>
-            <ul class="navbar" id="dropdownClick">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="pop_culture.html">Pop Culture</a></li>
-                <li class="active"><a class="active" href="lifestyle.html">Lifestyle</a></li>
-                <li><a href="feminism.html">Feminism</a></li>
-                <li><a href="built_website.html">How I Built This Website</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li class="dropdownIcon active"><a href="javascript:void(0);" onclick="dropdownMenu()">&#9776;</a></li>
-            </ul>
+            
+            <div class="row">
+                <div class="col-9">
+                    <ul class="navbar" id="dropdownClick">
+                        <li class="dropdownIcon active"><a href="javascript:void(0);" onclick="dropdownMenu()">&#9776;</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="pop_culture.html">Pop Culture</a></li>
+                        <li class="active"><a class="active" href="lifestyle.html">Lifestyle</a></li>
+                        <li><a href="feminism.html">Feminism</a></li>
+                        <li><a href="built_website.html">How I Built This Website</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-3" id="searching">
+                    <form action="/action.php" method="get">
+                        <div class="searchBar" id="searchBar">
+
+                            <div class="searchBox">
+                                <span class="collapseIcon"><a href="javascript:void(0);" onclick="collapseSearchBar()">&#735;</a></span>
+                                <label for="search"><input type="search" name="search" id="search" placeholder="Search..."><button type="submit" name="submitSearch" id="submitSearch"><i class="fa fa-search"></i></button></label>
+                            </div>
+                            
+                            <div class="searchIcon">
+                                <a href="javascript:void(0);" onclick="expandSearchBar()"><i class="fa fa-search"></i></a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
         </nav>
         
         
         <main>
         <!--Content-->
         <section>
-            <article class="left">
-            <h2 class="categoryHeadline">Lifestyle</h2>
+            <div class="categoryNavigation">
+            <h2 class="categoryHeadline lessMargin">Lifestyle</h2>
         
-            <h3>Skincare</h3>
+            <h3 class="lessMargin">Skincare</h3>
             <ul>
                 <li><a href="how_to_skincare.html">How to Build a Skincare Routine</a></li>
             </ul>
-            </article>
+            </div>
         </section>    
         </main>    
             
@@ -60,10 +82,33 @@
         <script>
             function dropdownMenu() {
                 var dropdownClick = document.getElementById("dropdownClick");
+                var searching = document.getElementById("searching");
                 if (dropdownClick.className === "navbar") {
                     dropdownClick.className += " responsive";
                 } else {
                     dropdownClick.className = "navbar";
+                } if (dropdownClick.className === "navbar responsive") {
+                    searching.className += " expanded"; 
+                } else {
+                    searching.className = "col-3";
+                } 
+            }
+            
+            function expandSearchBar() {
+                var searchBar = document.getElementById("searchBar");
+                if (searchBar.className === "searchBar"){
+                    searchBar.className += " visible";
+                } else {
+                    searchBar.className = "searchBar";
+                }
+            }
+            
+            function collapseSearchBar() {
+                var searchBar = document.getElementById("searchBar");
+                if (searchBar.className === "searchBar visible") {
+                    searchBar.className = "searchBar";
+                } else {
+                    searchBar.className = "searchBar visible";
                 }
             }
         </script>

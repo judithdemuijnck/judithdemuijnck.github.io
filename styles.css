@@ -1,17 +1,52 @@
-/*General*/
+/*###########General##########*/
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;700&family=Raleway:wght@300&display=swap');
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 
 body {
     background-color: rgb(255, 255, 230);
     margin:0;
     font-family:Lato,sans-serif;
+    min-height: 100vh;
+    position: relative;
 }
 
 * {
     box-sizing: border-box;
 }
 
-/*Header*/
+
+/*#########Grid System##########*/
+.row {
+    width:100%;
+    display:flex;
+    flex-wrap:wrap;
+    align-items: center;
+}
+
+.row::after {
+    display:table;
+    clear:both;
+    content:"";
+}
+
+.col-1 {width:8.33%}
+.col-2 {width:16.66%}
+.col-3 {width:25%}
+.col-4 {width:33.33%}
+.col-5 {width:41.66%}
+.col-6 {width:50%}
+.col-7 {width:58.33%}
+.col-8 {width:66.66}
+.col-9 {width:75%}
+.col-10 {width:83.33}
+.col-11 {width: 91.66}
+.col-12 {width:100%}
+
+[class*="col-"] {
+}
+
+/*#######Header#########*/
 header {
     margin:0;
 }
@@ -21,7 +56,6 @@ header {
     margin-left: auto;
     margin-right: auto;
     position:relative;
-    margin-bottom: -4px;
 }
   
 /*Create text-box for header*/
@@ -43,19 +77,23 @@ div.header div.text-block {
 .responsiveimg {
     max-width: 100%;
     height: auto;
+    display:block;
 }
 
-/*Navbar*/
+
+/*#########Navbar########*/
 nav {
     background-color: #1d1d1d;
     overflow:hidden;
-    width:100%
+    width:100
 }
 
-ul.navbar {
+nav ul.navbar {
     margin:0;
     padding:0; 
+    max-width:100%
 }
+
 
 ul.navbar li {
         float:left;
@@ -67,7 +105,7 @@ ul.navbar li {
 nav a {
     color: darkgrey;
     text-align: center;
-    font-size: 17px;
+    font-size: 1rem;
     text-decoration:none;
     font-family: Raleway, sans-serif;
     font-variant:small-caps;
@@ -78,12 +116,212 @@ nav  a.active, nav a:hover {
     color: white;
 }
 
-/*Article / Blogposts / Main*/
+
+/*#######Search Bar######*/
+
+/*Search bar icon*/
+
+
+
+nav div.searchBar div.searchBox {
+    float:right;
+    top:0;
+    right:0;
+    max-width:100%;
+    display:none;
+    position: relative;
+}
+
+nav div.searchBar div.searchBox span.collapseIcon a{
+    font-size:25px;
+    color: darkgrey;
+}
+
+nav div.searchBar div.searchBox span.collapseIcon a:hover {
+    color:white;
+}
+
+nav div.searchBar div.searchBox input[type=search] {
+    background-color:lightgrey;
+    color:black;
+    text-align:left;
+    padding:7px;
+    font-size:1rem;
+    margin:6px 0px 5px 0px;
+    border: 1px solid white;
+    border-radius:5px;
+    border-right:0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    width: 18vw;
+}
+
+nav div.searchBar div.searchBox button {
+    background-color:lightgrey;
+    color:black;
+    padding:7px;
+    font-size:1rem;
+    margin:6px 5px 5px 0px;
+    border-radius:5px;
+    border-top-left-radius:0px;
+    border-bottom-left-radius:0px;
+    border:1px solid white;
+    border-left:0px;
+}
+
+nav div.searchBar div.searchIcon {
+    float:right;
+    top:0;
+    right:0;
+    display:block;
+    background-color:#1d1d1d;
+    margin:6px;
+    padding:7px;
+    border:1px solid #1d1d1d;
+    border-radius:5px;
+    position: relative;
+}
+
+nav div.searchBar div.searchIcon a {
+    color:darkgrey;
+    font-size:17px;
+    top:0;
+    right:0;
+}
+
+nav div.searchBar div.searchIcon a:hover {
+    color:white;
+}
+
+nav div.searchBar.visible div.searchBox {
+    display:block;
+}
+
+nav div.searchBar.visible div.searchIcon {
+    display:none;
+}
+
+/*############Main#########*/
 
 main {
     font-weight: 300;
 }
 
+/*Category/Navigation pages*/
+
+
+div.categoryNavigation {
+    text-align: left;
+    float:left;
+    padding:20px;
+    width: 65%;
+    font-family: Lato,sans-serif; 
+    line-height: 1.3
+}
+
+div.categoryNavigation h1 {
+    font-weight:300 !important;
+}
+
+div.categoryNavigation h2 {
+    text-align:center;
+}
+
+h2.lessMargin {
+    margin: 5px 0px;
+}
+
+h3.lessMargin {
+    margin: 10px 0px;
+}
+
+div.categoryNavigation h3 {
+    font-variant:small-caps
+}
+
+div.categoryNavigation ul {
+    list-style:none 
+}
+
+div.categoryNavigation a {
+    color: black;
+    text-decoration: none;
+}
+
+div.categoryNavigation a:hover {
+    color:darkgrey;
+}
+
+/*Home Page*/
+
+div.home {
+    text-align: left;
+    float:left;
+    padding:20px;
+    width: 65%;
+    font-family: Lato,sans-serif; 
+    line-height: 1.3
+}
+
+div.home h1 {
+    font-weight:300 !important;
+}
+
+div.home h2 {
+    text-align:center;
+}
+
+
+div.home h3 {
+    font-variant:small-caps
+}
+
+div.home ul {
+    list-style:none 
+}
+
+div.home a {
+    color: black;
+    text-decoration: none;
+}
+
+div.home a:hover {
+    color:darkgrey;
+}
+
+div.home .col-6 {
+    padding:10px;
+    text-align: center;
+}
+
+div.home .col-6 ul {
+    padding:0px;
+}
+
+div.home .col-12 {
+    padding: 10px;
+    text-align: center;
+}
+
+div.home div.col-6 div.homeCategory {
+    border:1px solid darkgrey;
+    border-radius: 10px;
+    min-width:200px;
+    min-height:200px;
+    display:block;
+    padding: 10px
+}
+
+div.home div.col-12 div.homeCategory {
+    border: 1px solid darkgrey;
+    border-radius: 10px;
+
+    display:block;
+    margin: auto;
+}
+
+
+/*BLOGPOST*/
 article {
     float: left;
     padding: 20px;
@@ -92,23 +330,23 @@ article {
     font-family:Lato,sans-serif;
 }
 
-article ul, aside ul, .sources, .left {
-    text-align:left;
+article h1 {
+    font-size:24px;
 }
 
 article h1, h2, h3, h4 {
     font-weight:300 !important;
     }
 
-article h1 {
-    font-size:24px;
+article ul, .sources, .left {
+    text-align:left;
 }
 
-article a:hover, aside a {
+article a:hover {
     color:black;
 }
 
-article a, aside a:hover {
+article a {
     color:darkgrey;
 }
 
@@ -123,26 +361,38 @@ article a, aside a:hover {
 aside {
     float: left;
     width: 35%;
-    padding: 30px;
+    padding: 20px;
     text-align: center;
     font-family:Raleway,sans-serif;
 }
 
 aside div {
-    border: 2px dotted darkgrey;
+    border: 1px dotted darkgrey;
     padding:20px;
     border-radius:20px;
+}
+
+aside ul {
+    text-align: left;
 }
 
 aside li {
     padding:5px;
 }
 
+aside a {
+    color:black;
+}
+
+aside a:hover {
+    color:darkgrey;
+}
+
 aside img {
     border-radius: 50%;
     width: 60%;
     height: auto;
-    border: 2px solid darkgrey;
+    border: 1px solid darkgrey;
     padding:2px;
 }
 
@@ -152,49 +402,134 @@ section:after {
     clear: both;
 }
 
-/*Footer*/
+/*Contact Form*/
+
+div.contact form.contact fieldset {
+    text-align: center;
+    display: block;
+    margin:auto;
+    border-radius: 5px;
+    border: 1px dotted darkgrey;
+    padding:10px;
+    padding-right:20px;
+}
+
+div.contact form.contact fieldset legend {
+    font-variant: small-caps;
+    font-size:17px;
+    padding-bottom:5px;
+}
+
+div.contact form.contact fieldset label {
+    font-variant: small-caps
+}
+
+div.contact form.contact fieldset input[type=text] {
+    width:300px;
+    min-width:100px;
+    font-family: Raleway, sans-serif;
+    font-size: 17px;
+    padding: 5px;
+    border-radius: 7px;
+    border:1px solid darkgrey;
+    margin:5px;
+}
+
+div.contact form.contact fieldset input[type=email] {
+    width:300px;
+    min-width:100px;
+    font-family: Raleway, sans-serif;
+    font-size: 17px;
+    padding: 5px;
+    border-radius: 7px;
+    border:1px solid darkgrey;
+    margin:5px;
+}
+
+div.contact form.contact fieldset textarea {
+    width:100%;
+    height:auto;
+    border-radius: 20px;
+    font-family:Raleway, sans-serif;
+    font-size: 17px;
+    padding:5px;
+    margin:5px;
+    border: 1px solid darkgrey;
+    margin-right:15px;
+}
+
+div.contact form.contact fieldset input[type=submit] {
+    font-family: Lato, sans-serif;
+    font-size: 17px;
+    padding:3px;
+    border-radius: 7px;
+    border:1px solid darkgrey;
+    font-variant: small-caps;
+
+}
+    
+
+/*##########Footer############*/
 main:after {
     content: "";
     display: table;
     clear: both;
+    padding-bottom:5rem;
 }
 
 footer {
     padding: 10px;
     text-align: center;
     font-family:Raleway,sans-serif;
+    position: absolute;
+    width:100%;
+    bottom:0;
+    height:5rem
 }
 
-/*Adapt to screen width*/
-@media screen and (max-width: 800px) {
-    header, article, nav, aside {
+
+/*#########Adapt to screen width#########*/
+@media screen and (max-width: 876px) {
+    /*General*/
+    header, article, nav, aside, div.categoryNavigation, div.home {
         width: 100%;
         height: auto;
     }
+    
+    /*Header*/
     div.header h1 {
-        font-size: 15px;
+        font-size: 4vw;
     }
     div.header h3 {
-        font-size: 13px;
+        font-size: 3vw;
     }
-
+    
+    /*Navbar*/
+    ul.navbar li a {
+        font-size:20px;
+    }
+    
+    nav ul.navbar li.dropdownIcon {
+        display:block;
+        float:left;
+        top:0;
+        left:0;
+        padding: 12px 16px
+    } 
+    
     ul.navbar li:not(.active){
         display:none;
     }
-    nav ul.navbar li.dropdownIcon {
-        display:block;
-        float:right;
-    } 
-    nav ul.navbar.responsive li.dropdownIcon {
-        position:absolute;
-        top:0;
-        right:0;
-    }
     
-    h2.categoryHeadline {
-        display:none;
+    nav ul.navbar li.active {
+        padding 16px;
     }
 
+    /*Navbar.responsive*/
+    nav ul.navbar.responsive li.dropdownIcon a {
+        color:white;
+    }
+    
     nav ul.navbar.responsive {
         position:relative;
         padding-left:16px;;
@@ -207,18 +542,75 @@ footer {
         display:block;
         text-align:left;
     }
-        nav ul.navbar.responsive li.dropdownIcon a {
-        color:white;
+    
+    nav .col-9 {
+        width:59%;
     }
+    
+    nav
+    
+    
+    /*Search Bar*/
+    nav div.searchBar div.searchBox {
+        top:0;
+        right:0;
+        position: relative;
+    }
+    
+    nav div.searchBar div.searchBox input[type=search] {
+        margin: 9px 0px 8px 0px;
+    }
+    
+    nav div.searchBar div.searchBox button {
+        margin: 9px 8px 8px 0px;
+    }
+    
+    nav div.searchBar div.searchIcon {
+        margin: 8px;
+    }
+    
+    nav .col-3 {
+        width:41%;
+        float:right;
+    }
+    
+    nav div.searchBar div.searchBox input[type=search] {
+        width:29vw;
+    }
+    
+    nav .col-3.expanded {
+        min-height:324px;
+    }
+
+
+
+    
+    /*Category/Navigation Page*/
+    h2.categoryHeadline {
+        display:none;
+    }
+    div.home div.col-6 {
+        width:100%;
+    }
+    
+    div.home div.col-12 {
+        width: 100%;
+    }
+
+
+
 }
 
-@media screen and (min-width: 801px) {
+@media screen and (min-width: 877px) {
+    /*Header*/
     div.header h1 {
         font-size: 3vw;
     }
     div.header h3 {
         font-size: 2vw;
     }
+    
+    /*Navbar*/
     nav li.dropdownIcon {
         display:none;
     }
