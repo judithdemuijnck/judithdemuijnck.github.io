@@ -522,7 +522,7 @@ footer {
     }
     
     nav ul.navbar li.active {
-        padding 16px;
+        padding: 16px;
     }
 
     /*Navbar.responsive*/
@@ -575,12 +575,13 @@ footer {
     }
     
     nav div.searchBar div.searchBox input[type=search] {
-        width:25vw;
+        width:28vw;
     }
     
     nav .col-3.expanded {
         min-height:324px;
     }
+
 
 
 

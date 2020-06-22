@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Judith de Muijnck | INSERT</title>
+        
+        <link rel="stylesheet" href="styles.css">
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=width-device, intial-scale=1.0">
+        <meta name="author" content="Judith de Muijnck">
+        <meta name="description" content="Blog">
+        <meta name="keywords" content="INSERT">
+    </head>
+    
+    <body>
+        <!-- #### HEADER ##### -->
+        <header>
+            <div class="header">
+                <img src="DSCN1556.jpeg" alt="a placeholder photo of Lake Tekapo, NZ" class="responsiveimg">
+                <a href="index.html">
+                    <div class="text-block">
+                        <h1>JUDITH DE MUIJNCK</h1>
+                        <h3>pop culture analysis, lifestyle &amp; feminism</h3>
+                    </div>
+                </a>
+            </div>
+        </header>
+        
+        <!-- ##### NAVIGATION BAR WITH SEARCH FUNCTION ##### -->
+        <nav>
+            <div class="row">
+                <div class="col-9">
+                    <ul class="navbar" id="dropdownClick">
+                        <!-- Give active category .active class!! Both for li and a-->
+                        <li class="dropdownIcon"><a href="javascript:void(0);" onclick="dropdownMenu()">&#9776;</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="pop_culture.html">Pop Culture</a></li>
+                        <li><a href="lifestyle.html">Lifestyle</a></li>
+                        <li><a href="feminism.html">Feminism</a></li>
+                        <li><a href="built_website.html">How I Built This Website</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-3" id="searching">
+                    <form action="/action.php" method="get">
+                        <div class="searchBar" id="searchBar">
+                            <div class="searchBox">
+                                <span class="collapseIcon">
+                                    <a href="javascript:void(0);" onclick="collapseSearchBar()">&#735;</a>
+                                </span>
+                                <label for="search"> <input type="search" name="search" id="search" placeholder="Search..."><button type="submit" name="submitSearch" id="submitSearch"><i class="fa fa-search"></i></button></label>
+                            </div>
+                            
+                            <div class="searchIcon">
+                                <a href="javascript:void(0);" onclick="expandSearchBar()"><i class="fa fa-search"></i></a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+        
+            </div>
+        </nav>
+        
+        <!-- #### CONTENT #### -->
+        <main>
+            <section>
+                
+                <!-- ##### BLOGPOST #### -->
+                <article>
+                    <!-- ### CONTENT GOES HERE ### -->
+                    <h2>This is a headline</h2>
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                    
+                    <!-- Sources -->
+                    <div class="sources">
+                        <hr>
+                        <h4>References:</h4>
+                        <ul>
+                            <li>Name of source/ link to article</li>
+                        </ul>
+                    </div>
+                </article>
+                
+                <!-- #### SIDEBAR #### -->
+                <aside>
+                    <div>
+                        <h3>Other posts that might interest you:</h3>
+                        <ul>
+                            <li>LINK</li>
+                        </ul>
+                    </div>
+                </aside>
+            
+            </section>
+        </main>
+        
+        <!-- #### FOOTER #### -->
+        <footer>
+            <hr>
+            <p>&copy; Judith de Muijnck 2020</p>
+        </footer>
+        
+        
+        <!-- #### JAVASCRIPT #### -->
+        <script>
+            
+            function dropdownMenu() {
+                /* ### Creates a dropdown Navigation list and changes the size of col-3 (searchbar) when in responsive mode ### */
+                var dropdownClick = document.getElementById("dropdownClick");
+                var searching = document.getElementById("searching");
+                if (dropdownClick.className === "navbar") {
+                    dropdownClick.className += " responsive" ;
+                } else {
+                    dropdownClick.className = "navbar";
+                } if (dropdownClick.className === "navbar responsive") {
+                    searching.className += " expanded" ;
+                } else {
+                    searching.className = "col-3";
+                }
+            }
+            
+            function expandSearchBar() {
+                /* ### opens the searchBar when you click on the searchIcon ### */
+                var searchBar = document.getElementById("searchBar");
+                if (searchBar.className === "searchBar") {
+                    searchBar.className += " visible";
+                } else {
+                    searchBar.className = "searchBar"
+                }
+            }
+            
+            function collapseSearchBar() {
+                /* ### collapse the searchBar when you click on the collapseIcon ### */
+                var searchBar = document.getElementById("searchBar") ;
+                if (searchBar.className === "searchBar visible") {
+                    searchBar.className = "searchBar";
+                } else {
+                    searchBar.className = "searchBar visible"
+                }
+            }
+        
+        </script>
+    </body>
+</html>

@@ -104,6 +104,7 @@
             
             function expandSearchBar() {
                 var searchBar = document.getElementById("searchBar");
+                var searching = document.getElementById("searching");
                 if (searchBar.className === "searchBar"){
                     searchBar.className += " visible";
                 } else {
@@ -113,6 +114,7 @@
             
             function collapseSearchBar() {
                 var searchBar = document.getElementById("searchBar");
+                var searching = document.getElementById("searching");
                 if (searchBar.className === "searchBar visible") {
                     searchBar.className = "searchBar";
                 } else {
