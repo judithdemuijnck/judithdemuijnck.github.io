@@ -1,15 +1,413 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Judith de Muijnck | INSERT</title>
-        
-        <link rel="stylesheet" href="styles.css">
+        <title>Judith de Muijnck | CSS III</title>
         
         <meta charset="UTF-8">
         <meta name="viewport" content="width=width-device, intial-scale=1.0">
         <meta name="author" content="Judith de Muijnck">
         <meta name="description" content="Blog">
-        <meta name="keywords" content="INSERT">
+        <meta name="keywords" content="web development, css, html, javascript">
+        
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;700&family=Raleway:wght@300&display=swap');
+
+            @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'); 
+            
+            body {
+                background-color: rgb(255, 255, 230);
+                margin:0;
+                font-family:Lato,sans-serif;
+                min-height: 100vh;
+                position: relative;
+            }
+            
+            * {
+                box-sizing: border-box;
+            }
+            
+            /*#########Grid System##########*/
+            .row {
+                width:100%;
+                display:flex;
+                flex-wrap:wrap;
+                align-items: center;
+            }
+
+            .row::after {
+                display:table;
+                clear:both;
+                content:"";
+            }
+
+            .col-1 {width:8.33%}
+            .col-2 {width:16.66%}
+            .col-3 {width:25%}
+            .col-4 {width:33.33%}
+            .col-5 {width:41.66%}
+            .col-6 {width:50%}
+            .col-7 {width:58.33%}
+            .col-8 {width:66.66}
+            .col-9 {width:75%}
+            .col-10 {width:83.33}
+            .col-11 {width: 91.66}
+            .col-12 {width:100%}
+            
+            /*#######Header#########*/
+            header {
+                margin:0;
+            }
+
+            .header {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                position:relative;
+            }
+
+            /*Create text-box for header*/
+            div.header div.text-block {
+                position:absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: rgb(0,0,0);
+                color: white;
+                padding-left: 20px;
+                padding-right:20px;
+                font-family: Raleway, sans-serif;
+                text-decoration:none;
+                opacity:0.8;
+                text-align:center;
+            }
+
+            .responsiveimg {
+                max-width: 100%;
+                height: auto;
+                display:block;
+            }
+            
+            /*#########Navbar########*/
+            nav {
+                background-color: #1d1d1d;
+                overflow:hidden;
+                width:100
+            }
+
+            nav ul.navbar {
+                margin:0;
+                padding:0; 
+                max-width:100%
+            }
+
+
+            ul.navbar li {
+                    float:left;
+                    list-style:none;
+                    padding: 14px 16px;
+            }
+
+            /*Styling links in navbar*/
+            nav a {
+                color: darkgrey;
+                text-align: center;
+                font-size: 1rem;
+                text-decoration:none;
+                font-family: Raleway, sans-serif;
+                font-variant:small-caps;
+            }
+
+            /*Styling links while mouse hovers & active links in navbar*/
+            nav  a.active, nav a:hover {
+                color: white;
+            }
+            
+            /*#######Search Bar######*/
+
+            /*Search bar icon*/
+
+            nav div.searchBar div.searchBox {
+                float:right;
+                top:0;
+                right:0;
+                max-width:100%;
+                display:none;
+                position: relative;
+            }
+
+            nav div.searchBar div.searchBox span.collapseIcon a{
+                font-size:25px;
+                color: darkgrey;
+            }
+
+            nav div.searchBar div.searchBox span.collapseIcon a:hover {
+                color:white;
+            }
+
+            nav div.searchBar div.searchBox input[type=search] {
+                background-color:lightgrey;
+                color:black;
+                text-align:left;
+                padding:7px;
+                font-size:1rem;
+                margin:6px 0px 5px 0px;
+                border: 1px solid white;
+                border-radius:5px;
+                border-right:0px;
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+                width: 18vw;
+            }
+
+            nav div.searchBar div.searchBox button {
+                background-color:lightgrey;
+                color:black;
+                padding:7px;
+                font-size:1rem;
+                margin:6px 5px 5px 0px;
+                border-radius:5px;
+                border-top-left-radius:0px;
+                border-bottom-left-radius:0px;
+                border:1px solid white;
+                border-left:0px;
+            }
+
+            nav div.searchBar div.searchIcon {
+                float:right;
+                top:0;
+                right:0;
+                display:block;
+                background-color:#1d1d1d;
+                margin:6px;
+                padding:7px;
+                border:1px solid #1d1d1d;
+                border-radius:5px;
+                position: relative;
+            }
+
+            nav div.searchBar div.searchIcon a {
+                color:darkgrey;
+                font-size:17px;
+                top:0;
+                right:0;
+            }
+
+            nav div.searchBar div.searchIcon a:hover {
+                color:white;
+            }
+
+            nav div.searchBar.visible div.searchBox {
+                display:block;
+            }
+
+            nav div.searchBar.visible div.searchIcon {
+                display:none;
+            }
+            
+            /*############Main#########*/
+
+            main {
+                font-weight: 300;
+            }
+            
+            /*BLOGPOST*/
+            article {
+                float: left;
+                padding: 20px;
+                width: 65%;
+                text-align: center;
+                font-family:Lato,sans-serif;
+            }
+
+            article h1 {
+                font-size:24px;
+            }
+
+            article h1, h2, h3, h4 {
+                font-weight:300 !important;
+                }
+
+            article ul, .sources, .left {
+                text-align:left;
+            }
+
+            article a:hover {
+                color:black;
+            }
+
+            article a {
+                color:darkgrey;
+            }
+
+            /* Class for code snippets*/
+            .codesample {
+                background-color:#EEEEEE;
+                font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace;
+                font-size:10px;
+            }
+            
+            /*Sidebar*/
+            aside {
+                float: left;
+                width: 35%;
+                padding: 20px;
+                text-align: center;
+                font-family:Raleway,sans-serif;
+            }
+
+            aside div {
+                border: 1px dotted darkgrey;
+                padding:20px;
+                border-radius:20px;
+            }
+
+            aside ul {
+                text-align: left;
+            }
+
+            aside li {
+                padding:5px;
+            }
+
+            aside a {
+                color:black;
+            }
+
+            aside a:hover {
+                color:darkgrey;
+            }
+
+            section:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+            
+            /*##########Footer############*/
+            main:after {
+                content: "";
+                display: table;
+                clear: both;
+                padding-bottom:5rem;
+            }
+
+            footer {
+                padding: 10px;
+                text-align: center;
+                font-family:Raleway,sans-serif;
+                position: absolute;
+                width:100%;
+                bottom:0;
+                height:5rem
+            }
+            
+            /*#########Adapt to screen width#########*/
+            @media screen and (max-width: 876px) {
+                /*General*/
+                header, article, nav, aside, div.categoryNavigation, div.home {
+                    width: 100%;
+                    height: auto;
+                }
+
+                /*Header*/
+                div.header h1 {
+                    font-size: 4vw;
+                }
+                div.header h3 {
+                    font-size: 3vw;
+                }
+
+                /*Navbar*/
+                ul.navbar li a {
+                    font-size:20px;
+                }
+
+                nav ul.navbar li.dropdownIcon {
+                    display:block;
+                    float:left;
+                    top:0;
+                    left:0;
+                    padding: 12px 16px
+                } 
+
+                ul.navbar li:not(.active){
+                    display:none;
+                }
+
+                nav ul.navbar li.active {
+                    padding: 16px;
+                }
+
+                /*Navbar.responsive*/
+                nav ul.navbar.responsive li.dropdownIcon a {
+                    color:white;
+                }
+
+                nav ul.navbar.responsive {
+                    position:relative;
+                    padding-left:16px;;
+                }
+                nav ul.navbar.responsive li {
+                    display:inline;
+                    float:none;
+                }
+                nav ul.navbar.responsive li a {
+                    display:block;
+                    text-align:left;
+                }
+
+                nav .col-9 {
+                    width:59%;
+                }
+
+                /*Search Bar*/
+                nav div.searchBar div.searchBox {
+                    top:0;
+                    right:0;
+                    position: relative;
+                }
+
+                nav div.searchBar div.searchBox input[type=search] {
+                    margin: 9px 0px 8px 0px;
+                }
+
+                nav div.searchBar div.searchBox button {
+                    margin: 9px 8px 8px 0px;
+                }
+
+                nav div.searchBar div.searchIcon {
+                    margin: 8px;
+                }
+
+                nav .col-3 {
+                    width:41%;
+                    float:right;
+                }
+
+                nav div.searchBar div.searchBox input[type=search] {
+                    width:28vw;
+                }
+
+                nav .col-3.expanded {
+                    min-height:324px;
+                }
+            }
+
+            @media screen and (min-width: 877px) {
+                /*Header*/
+                div.header h1 {
+                    font-size: 3vw;
+                }
+                div.header h3 {
+                    font-size: 2vw;
+                }
+
+                /*Navbar*/
+                nav li.dropdownIcon {
+                    display:none;
+                }
+            }
+        </style>
     </head>
     
     <body>
@@ -37,7 +435,7 @@
                         <li><a href="pop_culture.html">Pop Culture</a></li>
                         <li><a href="lifestyle.html">Lifestyle</a></li>
                         <li><a href="feminism.html">Feminism</a></li>
-                        <li><a href="built_website.html">How I Built This Website</a></li>
+                        <li class="active"><a href="built_website.html" class="active">How I Built This Website</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
@@ -69,17 +467,109 @@
                 <!-- ##### BLOGPOST #### -->
                 <article>
                     <!-- ### CONTENT GOES HERE ### -->
-                    <h2>This is a headline</h2>
-                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                    <h1>How I Built This Website</h1>
+                    <h2>Part 5: CSS III</h2>
+                    <p>This time, I had two major projects: making the navigation bar collapse in mobile mode and creating a search bar. I also fixed a problem I had with my <code class="codesample">&lt;footer&gt;</code> and learned a few more tidbits.</p>
                     
-                    <!-- Sources -->
-                    <div class="sources">
-                        <hr>
-                        <h4>References:</h4>
-                        <ul>
-                            <li>Name of source/ link to article</li>
-                        </ul>
+                    <h3>Tidbits</h3>
+                    
+                    <p>I learned about the <code class="codesample">line-height</code> property which creates and sets the space between each line. I also learned how to style list items <code class="codesample">&lt;li&gt;</code> in <code class="codesample">&lt;ul&gt;</code> and <code class="codesample">&lt;ol&gt;</code> by setting the <code class="codesample">list-style</code> property to <code class="codesample">none;</code>. This deletes markers such as bullet points. Similarly, if the <code class="codesample">text-decoration</code> property is set to <code class="codesample">none;</code>, anchor elements <code class="codesample">&lt;a&gt;</code> will not be underlined as per their default setting. The <code class="codesample">text-decoration</code> property can also be used to <span style="text-decoration: underline">underline</span>, <span style="text-decoration: overline">overline</span> and <span style="text-decoration: line-through">strike out</span> (<code class="codesample">line-through;</code>) regular text.</p>
+                    
+                    <p>The <code class="codesample">overflow</code> property specifies how to handle content that is too big to fit in the element. For example, setting the property to <code class="codesample">scroll;</code> creates a scroll bar, while setting it to <code class="codesample">hidden;</code> hides content that overflows its container.</p>
+                    
+                    <p>The <code class="codesample">min-height</code> property makes sure that an element does not get too small, especially on responsive websites. The element will not be displayed as smaller than the minimum height. <code class="codesample">max-height</code> makes sure an element will not be displayed too big.</p>
+                    
+                    <p>I also learned about two website that can be very helpful:</p>
+                    
+                    <p>The <a href="https://unicode-table.com/en/">Unicode Character Table</a> makes it easy to search for unicodes such as emojis or HTML entities.</p>
+                    
+                    <p>The <a href="https://www.cssmatic.com/box-shadow">Box Shadow Generator</a> helps create box-shadows such as this: </p>
+                    
+                    <div style="background-color:#00d9ff; box-shadow: -10px -7px 4px -2px rgba(59,29,156,0.61); padding:10px;">
+                        <h3>This is in a box with box-shadow</h3>
                     </div>
+                    
+                    <p>In the class, I also learned that I should be as specific with .class names as possible, and use more <code class="codesample">&lt;div&gt;</code> tags in case I want to style them at a later date.</p>
+                    
+                    <h3>Footer</h3>
+                    
+                    <p>I had a problem with my <code class="codesample">footer</code> as it wasn’t always fixed to the bottom of the page. If there wasn’t enough content to fill the entire viewport, it would just hang out in the middle of the screen.</p>
+                    
+                    <p>I fixed this by giving the <code class="codesample">&lt;body&gt;</code> tag a <code class="codesample">min-height:</code> of <code class="codesample">100vh;</code>. This means it will always take up at least 100% of the viewport’s height. I fixed the <code class="codesample">&lt;footer&gt;</code> to the bottom of the screen using <code class="codesample">position:absolute;</code> and <code class="codesample">height:5rem</code>. No matter how much content, it is now always fixed to the bottom of the page.</p>
+                    
+                    <h3>Margin in Header</h3>
+                    <p>As you can see in previous blog posts, I had an issue with my header: there was always some margin around the image. Even when I set <code class="codesample">margin</code> to <code class="codesample">0;</code>, there was still a bit of margin between the header/image and the navigation bar. Originally, I fixed this by setting <code class="codesample">margin-bottom</code> to a negative value, but after a bit more research I realized I had to set the image’s <code class="codesample">display</code> to <code class="codesample">block;</code>.</p> 
+                    
+                    <h3>Re-Styling the Contact Form</h3>
+                    <p>When I originally created my contact form, I had no knowledge of CSS whatsoever. I now made sure that it looked a bit more professional.</p>
+                    
+                    <p>Previously, I’ve used the <code class="codesample">fieldset</code> element to contain my <code class="codesample">form</code> and create a line around it. I now changed this line to <code class="codesample">border: 1px dotted darkgrey;</code> which is the same dotted line that I am using in my sidebars. I also changed <code class="codesample">font-variant</code> to <code class="codesample">small-caps</code> for the titles within the contact form, and changed the <code class="codesample">font-size</code> to <code class="codesample">17px</code>. Concerning the input fields, I changed their <code class="codesample">width</code>, <code class="codesample">font-size</code>, <code class="codesample">font-family</code> and created a <code class="codesample">border-radius</code> . I’ve also made sure there was enough <code class="codesample">padding</code> and <code class="codesample">margin</code> within and between each element. Go to <a href="contact.html">contact</a> to check out the new form and leave a message if you want.</p>
+                    
+                    <h3>Navigation Bar</h3>
+                    <p>A bigger project I had, was to create a navigation bar that would be responsive and collapse when the viewport becomes small enough. This involved my first dip into javascript. </p>
+                    
+                    <p>The first step involved turning my navigation bar back into a list, and to create another list item <code class="codesample">&lt;li&gt;</code> that will be the menu icon. I created the menu icon by copying Unicode from the website I previously mentioned, but there are other ways of doing it. Using a <code class="codesample">@media</code> query, I set the icon’s <code class="codesample">display</code> to <code class="codesample">none;</code> when the display is bigger than 800px.</p>
+                    
+                    <p>When in mobile mode, I want the navigation bar to only show the menu icon and the active category of the post. In order to do so, I assigned the list item of the category a class <code class="codesample">.active</code>. Using the <code class="codesample">::not</code> selector, I set the <code class="codesample">display</code> of all list items that are not <code class="codesample">.active</code> to <code class="codesample">none</code>.</p>
+                    
+                    <img src="not-selector-navbar.png" alt="code example of using the ::not selector" max-width="100%" height="auto">
+                    
+                    <p>I want the navigation bar to expand again when you click the menu icon. For this, I create a new class <code class="codesample">.responsive</code> which I styled like this:</p>
+                    
+                    <img src="navbar-responsive-styling.png" alt="description of .navbar.responsive" max-width="100%" height="auto">
+                    
+                    <p>This means, categories will be displayed on top of each other, not next to each other. In order to change the original class <code class="codesample">.navbar</code> to <code class="codesample">.navbar.responsive</code>, I had to create a javascript function.</p>
+                    
+                    <img src="js-function-navbar.png" alt="description of the dropdownMenu() function" max-width="100%" height="auto">
+                    
+                    <p>The function <code class="codesample">dropdownMenu()”</code> creates a variable that contains the element with the id <code class="codesample">#dropdownClick</code>. The function then runs an if-statement. If the element with the id <code class="codesample">#dropdownClick</code> contains the class <code class="codesample">.navbar</code>, the function changes the class to <code class="codesample">.navbar.responsive</code>. Otherwise, it changes the class (back) to <code class="codesample">.navbar</code>.</p>
+                    
+                    <p>This function is activated through an <code class="codesample">onclick</code> event. When the menu icon is clicked, the function starts to run. The icon links to a javascript void in order to trick the browser to stay on the same page.</p>
+                    
+                    <img src="onclick-event-dropdownIcon.png" alt="code for onclick event" max-width="100%" height="auto">
+                    
+                    <p>In mobile/responsive mode, the navigation bar now only shows the active category and the menu icon, which collapses into a dropdown menu when you click on it. </p>
+                    
+                    <h3>Search Bar</h3>
+                    <p>The search bar was a project I wanted to do completely on my own, and, unfortunately, I failed. However, I still learned a lot and hopefully, once I am finished with my lesson on javascript, I should be able to fix it to some degree. </p>
+                    
+                    <p>In my first step, I styled the search bar. I created two inputs: <code class="codesample">&lt;input type=”text”&gt;</code> and <code class="codesample">&lt;button type=”submit”&gt;</code>. I gave them the same styling: same <code class="codesample">background-color</code> and <code class="codesample">color</code>, same <code class="codesample">font-size</code>, same <code class="codesample">border</code> and <code class="codesample">border-radius</code> and the same <code class="codesample">padding</code>. Even though they are two different elements, they look as if they are one element. This was eventually my downfall, but I am still not sure how to fix this.</p>
+                    
+                    <p>I then set the search bar’s <code class="codesample">display</code> to <code class="codesample">none;</code>. I created the search Icon again, <code class="codesample">display: block;</code> but as a simple link, not as an input field. This is the icon that is originally visible when you visit the website.</p> 
+                    
+                    <img src="searchBar.png" alt="searchBar code" max-width="100%" height="auto">
+                    
+                    <p>Clicking on the search Icon activates an <code class="codesample">onclick</code> event again, which calls my function <code class="codesample">expandSearchBar()</code>.</p>
+                    
+                    <img src="expandSearchBar.png" alt="code for function expandSearchBar()" max-width="100%" height="auto">
+                    
+                    <p>Similar to the navigation bar, the function checks for the class name of the id <code class="codesample">#searchBar</code> and can change it to <code class="codesample">searchBar.visible</code> which changes the search bar’s <code class="codesample">display</code> back to <code class="codesample">block;</code>.</p>
+                    
+                    <p>Since the search icon is also a submit button, clicking on it wouldn’t automatically close the search bar. I had to create a a little cross with another <code class="codesample">onclick</code> event that calls a new function, <code class="codesample">collapseSearchBar()</code>. This function renames <code class="codesample">.searchBar.visible</code> back to <code class="codesample">.searchBar</code>.</p>
+                    
+                    <p>So far, so good. However, once I worked on the search bar in responsive mode, I started having major problems. I especially struggled to keep the search icon at the top right of the navigation bar, even when I set it as <code class="codesample">float:right;</code>, <code class="codesample">top:0;</code> and <code class="codesample">right:0;</code>. Once I opened the navigation bar’s dropdown menu, the search icon would be positioned at the bottom right, not top right. I thought this was because the navbar list items and the search icon were being read as part of the same element, therefore search icon was just rendered as yet another list item. I tried to fix this, by placing both the navbar and the search bar/icon in different columns: navbar in a <code class="codesample">.col-9</code> and search bar in a <code class="codesample">.col-3</code>. I hoped this would portray them next to each other, not on top of each other. </p>
+                    
+                    <p>This trick worked to only some extend: the search bar and icon were no longer placed at the bottom of the dropdown menu as if they were another list item, but they were now placed in the middle of the navbar (still with a <code class="codesample">float:right;</code>). Eventually, I extended the <code class="codesample">dropdownMenu()</code> function to include a change to <code class="codesample">.col-3</code> class name, which calls a different class and gives <code class="codesample">.col-3</code> a <code class="codesample">min-height</code> of <code class="codesample">324px;</code>.</p>
+                    
+                    <p>Why <code class="codesample">324px;</code> you might ask? Well, after a little trial and error, this turned out to be the <code class="codesample">height</code> of <code class="codesample">.col-9</code> which contains the dropdown menu navbar. This made sure, that the search icon was placed at the top right of the navigation bar. Of course, this was only <code class="codesample">.col-9</code>’s <code class="codesample">height</code> on my device, meaning on other devices the search icon will <em>not</em> not be placed at the top right. So, my little hack, which took me hours to come up with, did not actually work. It has moved the search icon closer to the top, but it has not fixed my problem.</p>
+                    
+                    <p>Another major problem: since the search bar consists of two different elements (<code class="codesample">&lt;input type=”text”&gt;</code> and <code class="codesample">&lt;button type=”submit”&gt;</code>), they kept visually separating from each other whenever the viewport became too small. I first tried to change the <code class="codesample">width</code> of the input text field to <code class="codesample">28vw</code>. I thought using a relative size like this – 28% of the viewport’s width – would work on each device, but again, after testing, I found that it still broke up the search bar on other devices. My second technique involved changing the <code class="codesample">width</code> of <code class="codesample">.col-3</code> to <code class="codesample">100%;</code> when calling the function <code class="codesample">expandSeachBar()</code>. However, while I managed to include this change in the function, I never managed to change the <code class="codesample">width</code> back when closing the search bar using the <code class="codesample">collapseSearchBar()</code> function. Ultimately, I realized I had too little experience and knowledge in javascript, and decided to leave the search bar as it is right now, and I hope I will find a way to fix it when I continue my lesson on javascript.</p>
+                    
+                    <h3>Search Bar Input</h3>
+                    <p>Even if my layout had worked out, I still wouldn’t have known how to process the input. As far as I know, you need PHP-knowledge for this, but there might be other programs/languages which I hope to learn about in the future. As an alternative, I tried to create a customized search engine using <a href="https://programmablesearchengine.google.com/cse/all">google</a>. This would use google to search through my website and display results.</p>
+                    
+                    <p>I encountered two problems with this solution:</p>
+                    
+                    <p>1. My website is not yet on the google index, meaning it is essentially invisible and does not show up in google searches. I have done some research on how to fix this and am planning to include this in my next blog post.</p>
+                    
+                    <p>2. No matter what I tried, I always had to use a search bar created by google. I thought I could simply link to it as the <code class="codesample">&lt;form&gt; action</code> attribute and they would handle the data for me (as the form handler of my contact form does), but whenever I did this, I received error messages. It seems that you have to use google’s own search bar. While you can customize its design a bit, I wasn’t satisfied by its look and ultimately deleted it. </p>
+                    
+                    <h3>Final Thoughts</h3>
+                    <p>There were many problems this time, especially when it came to the search bar. However, I am trying not to be disappointed. I have only started my journey into web development, and I think continuing my class and acquiring more knowledge will help me fix these problems (and understand them better). I am excited to learn more, but I also want to acknowledge when I am just not there yet. I spend way too much time trying to fix problems that I don’t have the skills to fix yet. Hopefully in these next weeks, I’ll gain a better understanding of when it is worth the time and effort to research and work on these problems, and when I should move on. And I find it important to chronicle these problems even if I don’t have a solution for them.</p>
+                    
+                    <p>See you again next time!</p>
+                    
+                   
                 </article>
                 
                 <!-- #### SIDEBAR #### -->
@@ -87,7 +577,10 @@
                     <div>
                         <h3>Other posts that might interest you:</h3>
                         <ul>
-                            <li>LINK</li>
+                            <li><a href="css1.html">CSS I</a></li>
+                            <li><a href="css2.html">CSS II</a></li>
+                            <li><a href="html1.html">HTML I</a></li>
+                            <li><a href="html2.html">HTML II</a></li>
                         </ul>
                     </div>
                 </aside>
@@ -139,6 +632,8 @@
                     searchBar.className = "searchBar visible"
                 }
             }
+            
+
         
         </script>
     </body>

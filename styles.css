@@ -78,6 +78,7 @@ div.header div.text-block {
     max-width: 100%;
     height: auto;
     display:block;
+
 }
 
 
@@ -120,8 +121,6 @@ nav  a.active, nav a:hover {
 /*#######Search Bar######*/
 
 /*Search bar icon*/
-
-
 
 nav div.searchBar div.searchBox {
     float:right;
@@ -260,7 +259,8 @@ div.home {
     padding:20px;
     width: 65%;
     font-family: Lato,sans-serif; 
-    line-height: 1.3
+    line-height: 1.3;
+
 }
 
 div.home h1 {
@@ -546,10 +546,7 @@ footer {
     nav .col-9 {
         width:59%;
     }
-    
-    nav
-    
-    
+        
     /*Search Bar*/
     nav div.searchBar div.searchBox {
         top:0;
